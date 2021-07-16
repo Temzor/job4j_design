@@ -44,14 +44,10 @@ public class SimpleArray<T> implements Iterable<T> {
 
             @Override
             public T next() {
-                T result = null;
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                while (result == null) {
-                    result = array[point++];
-                }
-                return result;
+                return array[point++];
             }
         };
     }
