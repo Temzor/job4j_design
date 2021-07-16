@@ -4,7 +4,7 @@ import java.util.*;
 
 public class GenericUsage {
     public static void main(String[] args) {
-        List list = new ArrayList();
+        List<Object> list = new ArrayList<>();
         list.add("first");
         list.add("second");
         list.add("third");
@@ -26,15 +26,13 @@ public class GenericUsage {
 
 
     public void printRsl(Collection<?> col) {
-        for (Iterator<?> it = col.iterator(); it.hasNext();) {
-            Object next = it.next();
+        for (Object next : col) {
             System.out.println(next);
         }
     }
 
     public void printInfo(Collection<? extends Person> col) {
-        for (Iterator<? extends Person> it = col.iterator(); it.hasNext();) {
-            Person next = it.next();
+        for (Person next : col) {
             System.out.println(next);
         }
     }
