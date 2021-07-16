@@ -17,17 +17,19 @@ public class ParameterizedClass {
         Boolean b = booleanInfo.getValue();
 
         System.out.println(s + " " + i + " " + b);
-
-
     }
 
 }
 
 class Info<T> {
-    private T value;
+    private final T value;
 
     public Info(T value) {
         this.value = value;
+    }
+
+    public T getValue() {
+        return value;
     }
 
     @Override
@@ -36,8 +38,13 @@ class Info<T> {
                 + "value=" + value
                 + '}';
     }
-
-    public T getValue() {
-        return value;
-    }
 }
+interface I1 {
+}
+interface I2 {
+}
+
+
+
+
+
