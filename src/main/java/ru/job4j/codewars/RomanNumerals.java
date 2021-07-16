@@ -25,31 +25,46 @@ public class RomanNumerals {
         return s;
     }
 
+    @SuppressWarnings("checkstyle:InnerAssignment")
     public static int fromRoman(String s) {
         String[] r = {"IV", "IX", "XL", "XC", "CD", "CM"};
         for (String i : r) {
             switch (i) {
-                case "IV" -> s = s.replace(i, "IIII");
-                case "IX" -> s = s.replace(i, "VIIII");
-                case "XL" -> s = s.replace(i, "XXXX");
-                case "XC" -> s = s.replace(i, "LXXXX");
-                case "CD" -> s = s.replace(i, "CCCC");
-                case "CM" -> s = s.replace(i, "DCCCC");
-                default -> s = "";
+                case "IV" -> s.replace(i, "IIII");
+                case "IX" -> s.replace(i, "VIIII");
+                case "XL" -> s.replace(i, "XXXX");
+                case "XC" -> s.replace(i, "LXXXX");
+                case "CD" -> s.replace(i, "CCCC");
+                case "CM" -> s.replace(i, "DCCCC");
+                default -> s.replace(i, "Null");
             }
         }
         char[] c = s.toCharArray();
         int n = 0;
         for (int i : c) {
             switch (i) {
-                case 'I' -> n += 1;
-                case 'V' -> n += 5;
-                case 'X' -> n += 10;
-                case 'L' -> n += 50;
-                case 'C' -> n += 100;
-                case 'D' -> n += 500;
-                case 'M' -> n += 1000;
-                default -> n = 1;
+                case 'I' -> n++;
+                case 'V' -> {
+                    n += 5;
+                }
+                case 'X' -> {
+                    n += 10;
+                }
+                case 'L' -> {
+                    n += 50;
+                }
+                case 'C' -> {
+                    n += 100;
+                }
+                case 'D' -> {
+                    n += 500;
+                }
+                case 'M' -> {
+                    n += 1000;
+                }
+                default -> {
+                    n = 1;
+                }
             }
         }
         return n;
