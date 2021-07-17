@@ -1,14 +1,12 @@
 package ru.job4j.codewars;
 
+import java.util.Arrays;
+
 public class Positive {
     public static int sum(int[] arr) {
-        int sumPositive  = 0;
-        for (int i : arr) {
-            if (i > 0) {
-                sumPositive += i;
-            }
-        }
-        return Math.max(sumPositive, 0);
+        return Arrays
+                .stream(arr)
+                .filter(value -> value > 0)
+                .sum();
     }
-
 }
