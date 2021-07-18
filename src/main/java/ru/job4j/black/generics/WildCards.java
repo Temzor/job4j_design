@@ -8,6 +8,9 @@ public class WildCards {
         List<?> list = new ArrayList<String>();
 
         List<? extends Number> numberList = new ArrayList<Integer>();
+        List<? super Number> list1 = new ArrayList<Object>();
+
+
 
         ArrayList<Double> arrayList = new ArrayList<>();
         arrayList.add(5.13);
