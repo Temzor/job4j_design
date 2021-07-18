@@ -11,6 +11,4 @@ public class InfoTest {
         Info1<String> result = new Info1<>("test");
         assertEquals("test", result.getValue());
     }
-
-
 }
