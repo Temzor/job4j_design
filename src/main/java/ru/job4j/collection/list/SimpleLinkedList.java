@@ -37,29 +37,22 @@ public class SimpleLinkedList<E> implements List<E> {
     public Iterator<E> iterator() {
         return new Iterator<>() {
             private int position;
-            private int iterModCount = modCount;
+            private int iterModCount  = modCount;
 
             @Override
             public boolean hasNext() {
+                if (iterModCount  != modCount) {
+                    throw new ConcurrentModificationException("Element not found.");
+                }
                 return position < size;
             }
 
             @Override
             public E next() {
                 if (!hasNext()) {
-                    throw new NoSuchElementException("Element not found.");
+                    throw new NoSuchElementException("Please wait few second an try again.");
                 }
-                if (iterModCount != modCount) {
-                    throw new ConcurrentModificationException("Please wait few second an try again.");
-                }
-
-                if (position == 0) {
-                    last = fist;
-                }
-                Node<E> temp = last;
-                last = temp.next;
-                position++;
-                return temp.item;
+                return get(position++);
             }
         };
     }
