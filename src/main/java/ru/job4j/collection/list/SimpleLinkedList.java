@@ -3,10 +3,11 @@ package ru.job4j.collection.list;
 import java.util.*;
 
 public class SimpleLinkedList<E> implements List<E> {
-    private Node<E> fist;
+    private Node<E> first;
     private Node<E> last;
     private int size;
-    private int modCount;
+    private int modCount = 0;
+
 
     @Override
     public void add(E value) {
@@ -14,7 +15,7 @@ public class SimpleLinkedList<E> implements List<E> {
         Node<E> newElement = new Node<>(previous, value, null);
         last = newElement;
         if (previous == null) {
-            fist = newElement;
+            first = newElement;
         } else {
             previous.next = newElement;
         }
@@ -25,7 +26,7 @@ public class SimpleLinkedList<E> implements List<E> {
     @Override
     public E get(int index) {
         Objects.checkIndex(index, size);
-        Node<E> node = fist;
+        Node<E> node = first;
         for (int i = 0; i < index; i++) {
             node = node.next;
 
@@ -36,15 +37,16 @@ public class SimpleLinkedList<E> implements List<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<>() {
-            private int position;
-            private int iterModCount  = modCount;
+            private final int count = modCount;
+            private Node<E> current  = first;
 
             @Override
             public boolean hasNext() {
-                if (iterModCount  != modCount) {
-                    throw new ConcurrentModificationException("Element not found.");
+                if (count != modCount) {
+                    throw new ConcurrentModificationException("Please wait few second an try again.");
                 }
-                return position < size;
+
+                return current != null;
             }
 
             @Override
@@ -52,7 +54,9 @@ public class SimpleLinkedList<E> implements List<E> {
                 if (!hasNext()) {
                     throw new NoSuchElementException("Please wait few second an try again.");
                 }
-                return get(position++);
+                E returnItem = current .item;
+                current  = current .next;
+                return returnItem;
             }
         };
     }
