@@ -7,19 +7,15 @@ public class SimpleQueue<T> {
     private int sizeOut;
 
     public T poll() {
-        while (sizeIn != 0) {
-            out.push(in.pop());
-            sizeIn--;
-            sizeOut++;
+        if (sizeOut == 0) {
+            while (sizeIn != 0) {
+                out.push(in.pop());
+                sizeIn--;
+                sizeOut++;
+            }
         }
-        T result = out.pop();
         sizeOut--;
-        while (sizeOut != 0) {
-            in.push(out.pop());
-            sizeIn++;
-            sizeOut--;
-        }
-        return result;
+        return out.pop();
     }
 
     public void push(T value) {
