@@ -1,14 +1,14 @@
 package ru.job4j.codewars;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 
 public class LargestFiveDigitNumberTest {
     @Test
     public void exampleTests() {
-        Assertions.assertEquals(83910, LargestFiveDigitNumber.solve("283910"));
-        Assertions.assertEquals(67890, LargestFiveDigitNumber.solve("1234567890"));
+        assertEquals(83910, LargestFiveDigitNumber.solve("283910"));
+        assertEquals(67890, LargestFiveDigitNumber.solve("1234567890"));
     }
 
 }
