@@ -1,11 +1,13 @@
 package ru.job4j.codewars;
 
+import java.math.BigInteger;
+import java.util.stream.IntStream;
+
 public class Factorial {
     public int factorial(int n) {
-        int result = 1;
-        for (int i = 1; i <= n; i++) {
-            result *= i;
+        if (n < 0 || n > 12) {
+            throw new IllegalArgumentException();
         }
-        return result;
+        return n == 0 ? 1 : n * factorial(n - 1);
     }
 }
