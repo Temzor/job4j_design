@@ -61,8 +61,10 @@ public class SimpleMap<K, V> implements Map<K, V> {
     @Override
     public boolean remove(K key) {
         int index = indexFor(hash(key.hashCode()));
-        if (table[index] != null) {
+        if (table[index] != null && table[index].key.equals(key)) {
             table[index] = null;
+            count--;
+            modCount++;
             return true;
         } else {
             return false;
@@ -83,14 +85,14 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
             @Override
             public MapEntry<K, V> next() {
-                while (index < table.length && table[index] == null) {
-                    index++;
-                }
                 if (!hasNext()) {
                     throw new NoSuchElementException("Element no found!");
                 }
                 if (expectedCountMod != modCount) {
                     throw new ConcurrentModificationException("Wait, and try again!");
+                }
+                while (index < table.length && table[index] == null) {
+                    index++;
                 }
                 iteratorPoint++;
                 return table[index++];
