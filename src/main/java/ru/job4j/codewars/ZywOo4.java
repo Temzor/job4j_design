@@ -1,27 +1,15 @@
 package ru.job4j.codewars;
 
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 
 public class ZywOo4 {
     public static int[] multipleOfIndex(int[] array) {
-        ArrayList<Integer> al = new ArrayList<>();
-
-        int num = 1;
-
-        for (int i = 1; i < array.length; i++) {
-
-            if (array[i] % num == 0) {
-                al.add(array[i]);
-            }
-            num++;
-
-        }
-
-
-        return al.stream().mapToInt(a -> a).toArray();
+        return IntStream
+                .range(1, array.length)
+                .filter(i -> array[i] % i == 0)
+                .map(i -> array[i])
+                .toArray();
     }
-
-
 }
 
