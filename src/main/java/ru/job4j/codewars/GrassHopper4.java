@@ -6,8 +6,6 @@ public class GrassHopper4 {
         for (int num : nums) {
             sum += num;
         }
-
-
         return sum / nums.length;
     }
 }
