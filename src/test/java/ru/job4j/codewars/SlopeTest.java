@@ -17,5 +17,4 @@ public class SlopeTest {
         assertEquals("6", s.slope(new int[]{10, 20, 20, 80}));
         assertEquals("undefined", s.slope(new int[]{-10, 6, -10, 3}));
     }
-
 }
