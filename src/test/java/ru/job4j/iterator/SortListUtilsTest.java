@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertThat;
 
-public class ListUtilsTest {
+public class SortListUtilsTest {
 
     @Test
     public void whenAddBefore() {
