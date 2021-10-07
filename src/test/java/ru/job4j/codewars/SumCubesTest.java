@@ -12,7 +12,7 @@ public class SumCubesTest {
         assertEquals(36, SumCubes.sumCubes(3));
         assertEquals(100, SumCubes.sumCubes(4));
         assertEquals(3025, SumCubes.sumCubes(10));
-        assertEquals(69058203055025624L, SumCubes.sumCubes(22925));
+        assertEquals(69058203055025625L, SumCubes.sumCubes(22925));
     }
 
 }
