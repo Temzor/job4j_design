@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertThat;
 
-public class SimpleLinkedListTest {
+public class SimpleLinkedSortListTest {
 
     @Test
     public void whenAddAndGet() {

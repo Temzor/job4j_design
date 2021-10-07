@@ -7,7 +7,7 @@ import java.util.Collections;
 
 import static org.junit.Assert.*;
 
-public class CreateListTest {
+public class CreateSortListTest {
     @Test
     public void sampleTests() {
         assertEquals(Collections.singletonList(1), CreateList.createList(1));

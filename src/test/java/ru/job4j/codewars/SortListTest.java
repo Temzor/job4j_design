@@ -18,15 +18,6 @@ public class SortListTest {
     }
 
     @Test
-    public void capitalizationTest() {
-        ArrayList<String> sorted = new ArrayList<>();
-        ArrayList<String> strs = new ArrayList<>();
-        Collections.addAll(strs, "Algebra", "history", "Geometry", "english");
-        Collections.addAll(sorted, "Algebra", "english", "Geometry", "history");
-        assertEquals(sorted, SortList.sort(strs));
-    }
-
-    @Test
     public void symbolsTest() {
         ArrayList<String> sorted = new ArrayList<>();
         ArrayList<String> strs = new ArrayList<>();
