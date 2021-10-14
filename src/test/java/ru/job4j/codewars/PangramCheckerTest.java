@@ -21,7 +21,7 @@ public class PangramCheckerTest {
     public void test3() {
         String pangram3 = "Cwm fjord bank glyphs vext quiz";
         PangramChecker pc = new PangramChecker();
-        assertEquals(true, pc.check(pangram3));
+        assertTrue(pc.check(pangram3));
     }
 
 }
