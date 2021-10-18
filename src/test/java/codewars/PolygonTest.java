@@ -23,4 +23,5 @@ public class PolygonTest {
         Polygon poly = new Polygon(3, 4);
         assertEquals("2,309", String.format("%.3f", poly.circleDiameter()));
     }
+
 }
