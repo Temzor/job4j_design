@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class HexToDecTest {
     @Test
     public void examples() {
-        // assertEquals("expected", "actual");
         assertEquals(1, HexToDec.hexToDec("1"));
         assertEquals(10, HexToDec.hexToDec("a"));
         assertEquals(16, HexToDec.hexToDec("10"));

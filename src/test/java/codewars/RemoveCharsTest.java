@@ -36,7 +36,6 @@ public class RemoveCharsTest {
         StringBuilder sb = new StringBuilder();
 
         while (len > 0) {
-            // char from '!' to '~'
             sb.append((char) (RANDOM.nextInt(94) + 33));
             len--;
         }

@@ -3,7 +3,6 @@ package codewars;
 
 public class Solve2 {
     public static int[] solve(String[] arr) {
-        // do your thing
 
         int ascii = 97;
         int[] res = new int[arr.length];

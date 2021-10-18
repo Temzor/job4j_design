@@ -7,7 +7,6 @@ import java.util.Map;
 public class MorseCode {
     private static Map<String, String> morseMap = new HashMap<>();
     static {
-        //morseMap.put(" ", " ");
         morseMap.put("--..--", ",");
         morseMap.put(".-.-.-", ".");
         morseMap.put("..--..", "?");

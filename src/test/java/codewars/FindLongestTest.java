@@ -9,7 +9,6 @@ public class FindLongestTest {
 
     @Test
     public void basicTests() {
-        // assertEquals("expected", "actual");
         assertEquals(7, FindLongest.findLongest("The quick white fox jumped around the massive dog"));
         assertEquals(10, FindLongest.findLongest("Take me to tinseltown with you"));
         assertEquals(7, FindLongest.findLongest("Sausage chops"));
