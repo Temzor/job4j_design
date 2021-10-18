@@ -1,4 +1,4 @@
-package ru.job4j.codewars;
+package codewars;
 
 public class ArithmeticFunction {
     public static int arithmetic(int a, int b, String operator) {

@@ -1,4 +1,4 @@
-package ru.job4j.codewars;
+package codewars;
 
 import java.util.function.IntPredicate;
 import static java.util.stream.IntStream.of;

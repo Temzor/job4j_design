@@ -1,4 +1,4 @@
-package ru.job4j.codewars;
+package codewars;
 
 public class AddFive {
     public static int addFive(int num) {

@@ -1,4 +1,4 @@
-package ru.job4j.codewars;
+package codewars;
 
 public class AreaOrPerimeter {
     public static int areaOrPerimeter(int l, int w) {

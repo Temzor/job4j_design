@@ -1,4 +1,4 @@
-package ru.job4j.codewars;
+package codewars;
 
 public class Alarm {
     public static boolean setAlarm(boolean employed, boolean vacation) {
