@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.Snail;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.Arrays;

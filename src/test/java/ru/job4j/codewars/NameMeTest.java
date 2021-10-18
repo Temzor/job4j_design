@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.NameMe;
 import junit.framework.TestCase;
 
 import static org.junit.Assert.*;

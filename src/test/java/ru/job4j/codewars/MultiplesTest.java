@@ -1,6 +1,6 @@
 package ru.job4j.codewars;
 
-import junit.framework.TestCase;
+import codewars.Multiples;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

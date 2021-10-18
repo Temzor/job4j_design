@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.MaxRotate;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.Rotations;
 import org.junit.Test;
 
 import java.util.Arrays;

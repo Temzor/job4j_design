@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.Ghost;
 import org.junit.Test;
 
 public class GhostTest {

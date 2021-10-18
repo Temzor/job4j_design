@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.GrassHopper;
 import org.junit.Test;
 
 import java.util.Random;

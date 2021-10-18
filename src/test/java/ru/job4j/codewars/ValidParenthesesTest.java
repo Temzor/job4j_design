@@ -1,10 +1,9 @@
 package ru.job4j.codewars;
 
-import junit.framework.TestCase;
+import codewars.ValidParentheses;
 import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
 public class ValidParenthesesTest {
     @Test

@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.DoubleInteger;
 import org.junit.Assert;
 import org.junit.Test;
 

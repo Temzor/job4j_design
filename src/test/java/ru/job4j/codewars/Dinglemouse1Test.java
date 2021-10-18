@@ -1,6 +1,6 @@
 package ru.job4j.codewars;
 
-import org.junit.Assert;
+import codewars.Dinglemouse1;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

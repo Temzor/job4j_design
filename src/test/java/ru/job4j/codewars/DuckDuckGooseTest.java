@@ -1,5 +1,7 @@
 package ru.job4j.codewars;
 
+import codewars.DuckDuckGoose;
+import codewars.Player;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

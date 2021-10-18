@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.All;
 import org.junit.Test;
 
 import java.util.function.IntPredicate;

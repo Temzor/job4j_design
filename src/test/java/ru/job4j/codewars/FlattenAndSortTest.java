@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.FlattenAndSort;
 import org.junit.Assert;
 import org.junit.Test;
 

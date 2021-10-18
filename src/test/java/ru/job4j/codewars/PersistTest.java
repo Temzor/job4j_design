@@ -1,12 +1,13 @@
 package ru.job4j.codewars;
 
+import codewars.Persist;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PersistTest {
     @Test
-    public void BasicTests() {
+    public void basicTests() {
         System.out.println("****** Basic Tests ******");
         assertEquals(3, Persist.persistence(39));
         assertEquals(0, Persist.persistence(4));

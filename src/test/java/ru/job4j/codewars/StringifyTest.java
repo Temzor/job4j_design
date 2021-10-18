@@ -1,5 +1,7 @@
 package ru.job4j.codewars;
 
+import codewars.Node;
+import codewars.Stringify;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

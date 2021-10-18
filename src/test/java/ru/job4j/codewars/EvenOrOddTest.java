@@ -1,8 +1,8 @@
 package ru.job4j.codewars;
 
+import codewars.EvenOrOdd;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
 public class EvenOrOddTest {
     @Test

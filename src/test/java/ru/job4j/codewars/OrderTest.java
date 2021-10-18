@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.Order;
 import org.junit.Test;
 
 import static org.hamcrest.core.IsEqual.equalTo;

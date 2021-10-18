@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.RemoveChars;
 import org.junit.Test;
 
 import java.security.SecureRandom;

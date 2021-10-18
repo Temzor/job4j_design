@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.CountingDuplicates;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -27,8 +28,8 @@ public class CountingDuplicatesTest {
         String testTenC = new String(new char[10]).replace('\0', 'c');
         String test1CapitalA = new String(new char[1]).replace('\0', 'A');
         String test1d = new String(new char[1]).replace('\0', 'd');
-        String test = test1d + test1CapitalA + testTenC +
-                testHundredB + testThousandA;
+        String test = test1d + test1CapitalA + testTenC
+                + testHundredB + testThousandA;
 
 
         assertEquals(3, CountingDuplicates.duplicateCount(test));

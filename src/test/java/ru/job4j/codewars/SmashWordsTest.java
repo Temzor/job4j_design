@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.SmashWords;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -7,18 +8,18 @@ import static org.junit.Assert.*;
 public class SmashWordsTest {
     @Test
     public void validate() {
-        assertEquals("Bilal Djaghout", SmashWords.smash(new String[] {"Bilal", "Djaghout" }));
+        assertEquals("Bilal Djaghout", SmashWords.smash("Bilal", "Djaghout"));
     }
 
     @Test
     public void validateEmpty() {
-        assertEquals("", SmashWords.smash(new String[] {}));
+        assertEquals("", SmashWords.smash());
     }
 
 
     @Test
     public void validateOneWord() {
-        assertEquals("Bilal", SmashWords.smash(new String[] {"Bilal"}));
+        assertEquals("Bilal", SmashWords.smash("Bilal"));
     }
 
 

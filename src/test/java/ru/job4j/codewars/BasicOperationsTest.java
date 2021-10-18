@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.BasicOperations;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

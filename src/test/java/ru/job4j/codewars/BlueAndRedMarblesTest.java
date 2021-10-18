@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.BlueAndRedMarbles;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

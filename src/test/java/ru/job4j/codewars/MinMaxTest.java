@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.MinMax;
 import org.junit.Before;
 import org.junit.Test;
 

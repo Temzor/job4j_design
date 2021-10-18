@@ -1,6 +1,6 @@
 package ru.job4j.codewars;
 
-import junit.framework.TestCase;
+import codewars.CountIPAddresses;
 
 import static org.junit.Assert.assertEquals;
 

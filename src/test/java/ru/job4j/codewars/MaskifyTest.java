@@ -1,6 +1,6 @@
 package ru.job4j.codewars;
 
-import junit.framework.TestCase;
+import codewars.Maskify;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.MyLanguages;
 import org.junit.Test;
 
 import java.util.Arrays;

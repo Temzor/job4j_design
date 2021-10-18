@@ -1,5 +1,6 @@
 package ru.job4j.codewars;
 
+import codewars.Factorial;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

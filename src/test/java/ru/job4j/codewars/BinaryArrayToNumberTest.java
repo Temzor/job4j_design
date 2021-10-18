@@ -1,5 +1,7 @@
 package ru.job4j.codewars;
 
+import codewars.BinaryArrayToNumber;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
