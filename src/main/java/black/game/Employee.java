@@ -1,4 +1,4 @@
-package ru.job4j.black.generics.game;
+package black.game;
 
 public class Employee extends Participant {
     public Employee(String name, int age) {

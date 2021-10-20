@@ -1,4 +1,4 @@
-package ru.job4j.black.generics.game;
+package black.game;
 
 public abstract class Participant {
     private String name;

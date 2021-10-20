@@ -1,4 +1,4 @@
-package ru.job4j.black.generics.game;
+package black.game;
 
 public class TestGame {
     public static void main(String[] args) {

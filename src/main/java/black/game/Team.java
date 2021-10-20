@@ -1,4 +1,4 @@
-package ru.job4j.black.generics.game;
+package black.game;
 
 import java.util.ArrayList;
 import java.util.List;

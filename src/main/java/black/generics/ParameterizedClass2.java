@@ -1,4 +1,4 @@
-package ru.job4j.black.generics;
+package black.generics;
 
 public class ParameterizedClass2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ru.job4j.black.generics;
+package black.generics;
 
 import java.util.ArrayList;
 
