@@ -1,34 +1,34 @@
 package ru.job4j.question;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 public class Analize {
 
     public static Info diff(Set<User> previous, Set<User> current) {
-        int added = 0;
-        int changed = 0;
-        int deleted = 0;
+        Info info = new Info(0, 0, 0);
+        for (User user : previous) {
+            if (!current.contains(user)) {
+                info.setDeleted((info.getDeleted()) + 1);
+            }
+        }
 
-        if (previous.containsAll(current)) {
-            return new Info(added, changed, previous.size() - current.size());
+        for (User user : current) {
+            if (!previous.contains(user)) {
+                info.setAdded(info.getAdded() + 1);
+            }
         }
-        if (current.containsAll(previous)) {
-            return new Info(current.size() - previous.size(), changed, deleted);
+
+        for (User user : previous) {
+            for (User userCurrent : current) {
+                if (user.getId() == userCurrent.getId() && !user.getName().equals(userCurrent.getName())) {
+                    info.setAdded(info.getAdded() - 1);
+                    info.setChanged(info.getChanged() + 1);
+                    info.setDeleted(info.getDeleted() - 1);
+
+                }
+            }
         }
-        Set<User> users = new HashSet<>();
-        List<Integer> users1;
-        users.addAll(previous);
-        users.addAll(current);
-        users1 = users
-                .stream()
-                .map(User::getId)
-                .distinct()
-                .collect(Collectors.toList());
-        changed = users.size() - users1.size();
-        deleted = users1.size() - current.size();
-        added = users1.size() - previous.size();
-        return new Info(added, changed, deleted);
+
+        return info;
     }
-
 }
