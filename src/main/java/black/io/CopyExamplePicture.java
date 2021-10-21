@@ -12,8 +12,6 @@ public class CopyExamplePicture {
             while ((i = inputStream.read()) != -1) {
                 outputStream.write(i);
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
