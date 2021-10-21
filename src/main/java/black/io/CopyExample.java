@@ -5,9 +5,9 @@ import java.io.*;
 public class CopyExample {
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(
-                new FileReader("TestRubai.txt"));
+                new FileReader("4dd8cb2342fb0b33903ef63ce932f17c.jpg"));
             BufferedWriter writer  = new BufferedWriter(
-                    new FileWriter("test3.txt", true))) {
+                    new FileWriter("clone.jpg", true))) {
             int character;
             while ((character = reader.read()) != -1) {
                 writer.write(character);
