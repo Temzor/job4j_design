@@ -1,34 +1,37 @@
 package ru.job4j.question;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Analize {
 
     public static Info diff(Set<User> previous, Set<User> current) {
+        int change = 0;
+        int add = 0;
         Info info = new Info(0, 0, 0);
-        for (User user : previous) {
-            if (!current.contains(user)) {
-                info.setDeleted((info.getDeleted()) + 1);
+
+
+        Map<Integer, List<User>> tablePrevious = new HashMap<>(
+                previous.stream()
+                        .collect(Collectors.groupingBy(User::getId))
+        );
+        Map<Integer, List<User>> tableCurrent = new HashMap<>(
+                current.stream()
+                        .collect(Collectors.groupingBy(User::getId))
+        );
+
+        for (Integer keyCurrent : tableCurrent.keySet()) {
+            if (tablePrevious.containsKey(keyCurrent)) {
+                int i = tablePrevious.get(keyCurrent).equals(tableCurrent.get(keyCurrent)) ? add++ : change++;
             }
         }
 
-        for (User user : current) {
-            if (!previous.contains(user)) {
-                info.setAdded(info.getAdded() + 1);
-            }
-        }
-
-        for (User user : previous) {
-            for (User userCurrent : current) {
-                if (user.getId() == userCurrent.getId() && !user.getName().equals(userCurrent.getName())) {
-                    info.setAdded(info.getAdded() - 1);
-                    info.setChanged(info.getChanged() + 1);
-                    info.setDeleted(info.getDeleted() - 1);
-
-                }
-            }
-        }
-
+        info.setAdded(tableCurrent.size() - add - change);
+        info.setChanged(change);
+        info.setDeleted(tablePrevious.size() - add - change);
         return info;
     }
 }

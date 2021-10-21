@@ -14,6 +14,9 @@ public class Info {
         this.deleted = deleted;
     }
 
+    public Info() {
+    }
+
     public int getAdded() {
         return added;
     }
@@ -53,5 +56,14 @@ public class Info {
     @Override
     public int hashCode() {
         return Objects.hash(added, changed, deleted);
+    }
+
+    @Override
+    public String toString() {
+        return "Info{"
+                + "added=" + added
+                + ", changed=" + changed
+                + ", deleted=" + deleted
+                + '}';
     }
 }
