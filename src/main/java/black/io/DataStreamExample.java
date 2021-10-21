@@ -23,10 +23,6 @@ public class DataStreamExample {
             System.out.println(inputStream.readLong());
             System.out.println(inputStream.readFloat());
             System.out.println(inputStream.readDouble());
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
