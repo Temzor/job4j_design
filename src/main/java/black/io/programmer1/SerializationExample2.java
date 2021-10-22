@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 public class SerializationExample2 {
     public static void main(String[] args) {
         Car car = new Car("reno", "black");
-        Employee employees = new Employee("Maria", "IT", 28, 500, car);
+        Employee employees = new Employee("Maria", "Ivanova", "IT", 500, car);
         try (ObjectOutputStream outputStream = new ObjectOutputStream(
                 new FileOutputStream("employees2.bin"))) {
             outputStream.writeObject(employees);

@@ -4,16 +4,17 @@ import java.io.Serializable;
 import java.util.StringJoiner;
 
 public class Employee implements Serializable {
+    static final long serialVersionUID = 2;
     String name;
+    String surname;
     String department;
-    int age;
-    double salary;
+    transient double salary;
     Car car;
 
-    public Employee(String name, String department, int age, double salary, Car car) {
+    public Employee(String name, String surname, String department, double salary, Car car) {
         this.name = name;
+        this.surname = surname;
         this.department = department;
-        this.age = age;
         this.salary = salary;
         this.car = car;
     }
@@ -22,8 +23,8 @@ public class Employee implements Serializable {
     public String toString() {
         return new StringJoiner(", ", Employee.class.getSimpleName() + "[", "]")
                 .add("name='" + name + "'")
+                .add("surname='" + surname + "'")
                 .add("department='" + department + "'")
-                .add("age=" + age)
                 .add("salary=" + salary)
                 .add("car=" + car)
                 .toString();
