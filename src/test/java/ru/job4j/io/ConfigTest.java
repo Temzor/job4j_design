@@ -32,4 +32,27 @@ public class ConfigTest {
         Config config = new Config(path);
         config.load();
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenPairWithoutUTF8() {
+        String path = "./data/pair_without_UTF8.properties";
+        Config config = new Config(path);
+        config.load();
+    }
+
+    @Test
+    public void whenPairWithUTF8() {
+        String path = "./data/pair_with_UTF8.properties";
+        Config config = new Config(path);
+        config.load();
+        assertThat(config.value("encoding"), is("UTF-8"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenPairDoubleSignWithUTF8() {
+        String path = "./data/pair_with_double_signUTF8.properties";
+        Config config = new Config(path);
+        config.load();
+        assertThat(config.value("encoding"), is("UTF-8"));
+    }
 }
