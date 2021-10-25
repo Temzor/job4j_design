@@ -5,7 +5,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class ChanelBufferExample {
+public class ChannelBufferExample {
     public static void main(String[] args) {
         try (RandomAccessFile randomAccessFile =
                      new RandomAccessFile("test10.txt", "rw");
