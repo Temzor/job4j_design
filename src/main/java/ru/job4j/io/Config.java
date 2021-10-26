@@ -21,7 +21,7 @@ public class Config {
             reader.lines().forEach(r -> {
                 if (!r.isEmpty() && !r.contains("#")) {
                     String[] element = r.split("=");
-                    if (element.length != 2) {
+                    if (element[0].isEmpty() || element.length > 2) {
                         throw new IllegalArgumentException("Unknown element passed");
                     }
                     values.put(element[0], element[1]);

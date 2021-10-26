@@ -55,4 +55,11 @@ public class ConfigTest {
         config.load();
         assertThat(config.value("encoding"), is("UTF-8"));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenPairWithCommentNoKey() {
+        String path = "./data/no_key.properties";
+        Config config = new Config(path);
+        config.load();
+    }
 }
