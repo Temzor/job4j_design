@@ -19,7 +19,7 @@ public class Config {
     public void load() {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             reader.lines().forEach(r -> {
-                if (!r.isEmpty() && !r.contains("#")) {
+                if (!r.isEmpty() && !r.startsWith("#") && r.contains("=")) {
                     String[] element = r.split("=");
                     if (element.length != 2 || element[0].isEmpty()) {
                         throw new IllegalArgumentException("Unknown element passed");
