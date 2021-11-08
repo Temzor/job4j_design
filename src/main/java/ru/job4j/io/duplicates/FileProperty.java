@@ -49,9 +49,9 @@ public class FileProperty {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", FileProperty.class.getSimpleName() + "[", "]")
-                .add("path='" + name + "'")
-                .add("size=" + size + " Kb.")
+        return new StringJoiner(", ", "Дубликаты найдены" + " ", " ")
+                .add("по пути: '" + name + "'")
+                .add(" размер файла " + size + " Kb.")
                 .toString();
     }
 }

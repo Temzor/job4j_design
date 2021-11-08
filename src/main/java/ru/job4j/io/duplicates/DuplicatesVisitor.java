@@ -16,7 +16,7 @@ public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-        FileProperty fileProperty = new FileProperty(attrs.size(), file.toFile().getName());
+        FileProperty fileProperty = new FileProperty(attrs.size(), file.toFile().getAbsolutePath());
         if (!files.containsKey(fileProperty)) {
             duplicates.add(fileProperty);
         } else {
