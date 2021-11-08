@@ -50,8 +50,8 @@ public class FileProperty {
     @Override
     public String toString() {
         return new StringJoiner(", ", FileProperty.class.getSimpleName() + "[", "]")
+                .add("path='" + name + "'")
                 .add("size=" + size + " Kb.")
-                .add("name='" + name + "'")
                 .toString();
     }
 }
