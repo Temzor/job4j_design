@@ -17,7 +17,7 @@ public class ArgsName {
         }
         for (String arg : args) {
             String[] pair = arg.split("=");
-            if (pair.length != 2 || pair[0].trim().isEmpty() || pair[1].trim().isEmpty()) {
+            if (pair[0].length() < 2 || pair[0].charAt(0) != '-' || pair.length != 2) {
                 throw new IllegalArgumentException();
             }
             values.put(pair[0].substring(1), pair[1]);
