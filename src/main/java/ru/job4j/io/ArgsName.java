@@ -16,8 +16,11 @@ public class ArgsName {
             throw new IllegalArgumentException("Invalid key");
         }
         for (String arg : args) {
+            if (!arg.startsWith("-") || arg.startsWith("-=") || !arg.contains("=") || arg.endsWith("=")) {
+                throw new IllegalArgumentException("Invalid key");
+            }
             String[] pair = arg.split("=");
-            if (pair[0].length() < 2 || pair[0].charAt(0) != '-' || pair.length != 2) {
+            if (pair[0].length() < 2 || pair.length != 2) {
                 throw new IllegalArgumentException();
             }
             values.put(pair[0].substring(1), pair[1]);
