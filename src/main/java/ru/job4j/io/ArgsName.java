@@ -30,7 +30,7 @@ public class ArgsName {
 
     public static boolean validatorLengthArray(String[] args) {
         if (args.length == 0) {
-            throw new IllegalArgumentException("Parameter is not exist, no found key to run, example /-Xmx=512/, /-encoding=UTF-8./");
+            throw new IllegalArgumentException("Parameter is not exist, no found key to run, example /-Xmx=512/, /-encoding=UTF-8./, /-d/, /-e/, /-o/.");
         }
         return false;
     }
