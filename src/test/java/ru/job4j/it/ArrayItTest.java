@@ -1,11 +1,11 @@
 package ru.job4j.it;
 
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.is;
-
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 public class ArrayItTest {
 
@@ -21,11 +21,11 @@ public class ArrayItTest {
     @Test
     public void whenReadSequence() {
         ArrayIt it = new ArrayIt(
-                new int[] {1, 2, 3}
+                new int[] {1, 3, 4}
         );
         assertThat(it.next(), is(1));
-        assertThat(it.next(), is(2));
         assertThat(it.next(), is(3));
+        assertThat(it.next(), is(4));
     }
 
     @Test(expected = NoSuchElementException.class)
