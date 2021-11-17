@@ -1,5 +1,7 @@
 package ru.job4j.generics;
 
+import java.util.StringJoiner;
+
 public class GenericsClass<K, V> {
     private K key;
 
@@ -12,17 +14,18 @@ public class GenericsClass<K, V> {
 
     @Override
     public String toString() {
-        return "GenericsClass{"
-                + "key=" + key
-                + ", value=" + value
-                + '}';
+        return new StringJoiner(", ", GenericsClass.class.getSimpleName() + "[", "]")
+                .add("key=" + key)
+                .add("value=" + value)
+                .toString();
     }
 
     public static void main(String[] args) {
-        GenericsClass<String, String> gen = new GenericsClass<>("First key", "First value");
-        System.out.println("Вывод в консоль: " + gen);
+        GenericsClass<String, String> first = new GenericsClass<>("First key", "First value");
+        System.out.println("Вывод в консоль: " + first);
 
         GenericsClass<Integer, String> second = new GenericsClass<>(12345, "Second value");
         System.out.println("Вывод в консоль: " + second);
+
     }
 }

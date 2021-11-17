@@ -1,15 +1,14 @@
 package ru.job4j.generics;
 
-public class Node {
-    private Comparable data;
-    private Node next;
+public class Node<T extends Comparable<T>> {
+    private final Comparable<T> data;
 
-    public Node(Comparable data, Node next) {
+    public Node(Comparable<T> data) {
         this.data = data;
-        this.next = next;
     }
 
-    public Comparable getData() {
+    public Object getData() {
         return data;
     }
+
 }
