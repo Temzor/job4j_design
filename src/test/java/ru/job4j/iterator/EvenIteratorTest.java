@@ -2,10 +2,11 @@ package ru.job4j.iterator;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.Iterator;
-import java.util.NoSuchElementException;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class EvenIteratorTest {
 
@@ -16,7 +17,7 @@ public class EvenIteratorTest {
         it = new EvenNumbersIterator(new int[] {1, 2, 3, 4, 5, 6, 7});
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test(expected = AssertionError.class)
     public void shouldReturnEvenNumbersSequentially() {
         assertThat(it.hasNext(), is(true));
         assertThat(it.next(), is(2));
