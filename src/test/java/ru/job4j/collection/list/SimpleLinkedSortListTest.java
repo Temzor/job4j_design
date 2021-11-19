@@ -7,13 +7,13 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SimpleLinkedSortListTest {
 
     @Test
     public void whenAddAndGet() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -24,7 +24,7 @@ public class SimpleLinkedSortListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void whenGetFromOutOfBoundThenExceptionThrown() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.add(1);
         list.add(2);
         list.get(2);
@@ -32,7 +32,7 @@ public class SimpleLinkedSortListTest {
 
     @Test
     public void whenAddThenIt() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -45,7 +45,7 @@ public class SimpleLinkedSortListTest {
 
     @Test
     public void whenGetIteratorTwiceThenEveryFromBegin() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.add(1);
         list.add(2);
 
@@ -66,7 +66,7 @@ public class SimpleLinkedSortListTest {
 
     @Test(expected = ConcurrentModificationException.class)
     public void whenCorruptedIt() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.add(1);
         Iterator<Integer> it = list.iterator();
         list.add(2);
@@ -75,7 +75,7 @@ public class SimpleLinkedSortListTest {
 
     @Test(expected = NoSuchElementException.class)
     public void whenGetEmptyFromIt() {
-        List<Integer> list = new SimpleLinkedList<>();
+        List<Integer> list = new SimpleLinkedListOld<>();
         list.iterator().next();
     }
 }

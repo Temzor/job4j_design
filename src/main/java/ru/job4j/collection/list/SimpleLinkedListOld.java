@@ -2,7 +2,7 @@ package ru.job4j.collection.list;
 
 import java.util.*;
 
-public class SimpleLinkedList<E> implements List<E> {
+public class SimpleLinkedListOld<E> implements List<E> {
     private Node<E> first;
     private Node<E> last;
     private int size;
