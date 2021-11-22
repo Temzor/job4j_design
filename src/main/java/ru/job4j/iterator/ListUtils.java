@@ -28,6 +28,7 @@ public class ListUtils {
             }
             i.next();
         }
+
     }
 
     public static <T> void removeIf(List<T> list, Predicate<T> filter) {
