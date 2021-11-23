@@ -17,9 +17,10 @@ public class User {
     public static void main(String[] args) {
         Map<User, Object> map = new HashMap<>();
         User user1 = new User("Daniil", 0, new GregorianCalendar(2020, Calendar.MARCH, 14));
-        User user2 = new User("Anna", 1, new GregorianCalendar(1993, Calendar.JUNE, 9));
+        User user2 = new User("Daniil", 0, new GregorianCalendar(2020, Calendar.MARCH, 14));
         map.put(user1, new Object());
         map.put(user2, new Object());
+        System.out.println(user1.equals(user2));
         for (User user : map.keySet()) {
             System.out.println(user);
         }
@@ -30,6 +31,24 @@ public class User {
         int indexUser2 = hashUser2 & 15;
         System.out.println(indexUser1);
         System.out.println(indexUser2);
+        System.out.println(map.size());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, children, birthday);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
     }
 
     @Override
