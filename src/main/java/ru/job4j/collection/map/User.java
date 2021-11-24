@@ -3,9 +3,9 @@ package ru.job4j.collection.map;
 import java.util.*;
 
 public class User {
-    private String name;
-    private int children;
-    private Calendar birthday;
+    private final String name;
+    private final int children;
+    Calendar birthday;
 
     public User(String name, int children, Calendar birthday) {
         this.name = name;
@@ -13,13 +13,30 @@ public class User {
         this.birthday = birthday;
     }
 
+
+    public static void main(String[] args) {
+        Map<User, Object> map = new HashMap<>();
+        User user1 = new User("Daniil", 0, new GregorianCalendar(2020, Calendar.MARCH, 14));
+        User user2 = new User("Daniil", 0, new GregorianCalendar(2020, Calendar.MARCH, 14));
+        map.put(user1, new Object());
+        map.put(user2, new Object());
+        System.out.println(user1.equals(user2));
+        for (User user : map.keySet()) {
+            System.out.println(user);
+        }
+
+        int hashUser1 = user1.hashCode() ^ user1.hashCode() >>> 16;
+        int hashUser2 = user2.hashCode() ^ user2.hashCode() >>> 16;
+        int indexUser1 = hashUser1 & 15;
+        int indexUser2 = hashUser2 & 15;
+        System.out.println(indexUser1);
+        System.out.println(indexUser2);
+        System.out.println(map.size());
+    }
+
     @Override
-    public String toString() {
-        return "User{"
-                + "name='" + name + '\''
-                + ", children=" + children
-                + ", birthday=" + birthday
-                + '}';
+    public int hashCode() {
+        return Objects.hash(name, children, birthday);
     }
 
     @Override
@@ -35,26 +52,11 @@ public class User {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, children, birthday);
-    }
-
-    public static void main(String[] args) {
-        User one = new User("Petr", 5, new GregorianCalendar(2017, Calendar.MARCH, 25));
-        User two = new User("Petr", 5, new GregorianCalendar(2017, Calendar.MARCH, 25));
-        Map<User, Object> map = new HashMap<>();
-        map.put(one, new Object());
-        map.put(two, new Object());
-        for (Map.Entry<User, Object> user : map.entrySet()) {
-            System.out.println(user);
-        }
-
-        Object object = new Object();
-        int hCode;
-        hCode = one.hashCode();
-        System.out.println(hCode);
-        hCode = two.hashCode();
-        System.out.println(hCode);
-
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("name='" + name + "'")
+                .add("children=" + children)
+                .add("birthday=" + birthday)
+                .toString();
     }
 }

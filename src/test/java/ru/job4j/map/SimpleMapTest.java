@@ -7,7 +7,6 @@ import java.util.*;
 import static org.junit.Assert.*;
 
 public class SimpleMapTest {
-
     @Test
     public void put() {
         SimpleMap<String, String> map = new SimpleMap<>();

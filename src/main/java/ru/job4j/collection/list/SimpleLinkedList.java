@@ -1,23 +1,25 @@
 package ru.job4j.collection.list;
 
-import java.util.*;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class SimpleLinkedList<E> implements List<E> {
-    private Node<E> first;
-    private Node<E> last;
-    private int size;
-    private int modCount = 0;
-
+    transient Node<E> first;
+    transient Node<E> last;
+    transient int size;
+    transient int modCount;
 
     @Override
     public void add(E value) {
-        Node<E> previous = last;
-        Node<E> newElement = new Node<>(previous, value, null);
+        final Node<E> preview = last;
+        final Node<E> newElement = new Node<>(value);
         last = newElement;
-        if (previous == null) {
+        if (preview == null) {
             first = newElement;
         } else {
-            previous.next = newElement;
+            preview.next = newElement;
         }
         size++;
         modCount++;
@@ -29,7 +31,6 @@ public class SimpleLinkedList<E> implements List<E> {
         Node<E> node = first;
         for (int i = 0; i < index; i++) {
             node = node.next;
-
         }
         return node.item;
     }
@@ -37,39 +38,25 @@ public class SimpleLinkedList<E> implements List<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<>() {
-            private final int count = modCount;
-            private Node<E> current  = first;
-
+            final int count = modCount;
+            Node<E> current = first;
             @Override
             public boolean hasNext() {
-                if (count != modCount) {
-                    throw new ConcurrentModificationException("Please wait few second an try again.");
-                }
-
-                return current != null;
+               if (count != modCount) {
+                   throw new ConcurrentModificationException("Please wait few second an try again.");
+               }
+               return current != null;
             }
 
             @Override
             public E next() {
                 if (!hasNext()) {
-                    throw new NoSuchElementException("Please wait few second an try again.");
+                    throw new NoSuchElementException("Element bot found;");
                 }
-                E returnItem = current .item;
-                current  = current .next;
+                E returnItem = current.item;
+                current = current.next;
                 return returnItem;
             }
         };
-    }
-
-    private static class Node<E> {
-        E item;
-        Node<E> next;
-        Node<E> prev;
-
-        Node(Node<E> prev, E element, Node<E> next) {
-            this.item = element;
-            this.next = next;
-            this.prev = prev;
-        }
     }
 }

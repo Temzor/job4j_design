@@ -1,34 +1,37 @@
 package ru.job4j.question;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Analize {
 
     public static Info diff(Set<User> previous, Set<User> current) {
-        int added = 0;
-        int changed = 0;
-        int deleted = 0;
+        int change = 0;
+        int add = 0;
+        Info info = new Info(0, 0, 0);
 
-        if (previous.containsAll(current)) {
-            return new Info(added, changed, previous.size() - current.size());
+
+        Map<Integer, List<User>> tablePrevious = new HashMap<>(
+                previous.stream()
+                        .collect(Collectors.groupingBy(User::getId))
+        );
+        Map<Integer, List<User>> tableCurrent = new HashMap<>(
+                current.stream()
+                        .collect(Collectors.groupingBy(User::getId))
+        );
+
+        for (Integer keyCurrent : tableCurrent.keySet()) {
+            if (tablePrevious.containsKey(keyCurrent)) {
+                int i = tablePrevious.get(keyCurrent).equals(tableCurrent.get(keyCurrent)) ? add++ : change++;
+            }
         }
-        if (current.containsAll(previous)) {
-            return new Info(current.size() - previous.size(), changed, deleted);
-        }
-        Set<User> users = new HashSet<>();
-        List<Integer> users1;
-        users.addAll(previous);
-        users.addAll(current);
-        users1 = users
-                .stream()
-                .map(User::getId)
-                .distinct()
-                .collect(Collectors.toList());
-        changed = users.size() - users1.size();
-        deleted = users1.size() - current.size();
-        added = users1.size() - previous.size();
-        return new Info(added, changed, deleted);
+
+        info.setAdded(tableCurrent.size() - add - change);
+        info.setChanged(change);
+        info.setDeleted(tablePrevious.size() - add - change);
+        return info;
     }
-
 }
