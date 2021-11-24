@@ -1,15 +1,14 @@
 package ru.job4j.map;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class SimpleMap<K, V> implements Map<K, V> {
 
     private static final float LOAD_FACTOR = 0.75f;
-
     private int capacity = 8;
-
     private int count = 0;
-
     private int modCount = 0;
 
     private MapEntry<K, V>[] table = new MapEntry[capacity];
@@ -28,22 +27,64 @@ public class SimpleMap<K, V> implements Map<K, V> {
     }
 
     private void expand() {
+        capacity *= 2;
+        MapEntry<K, V>[] temp = table;
+        table = new MapEntry[capacity];
+        for (int i = 0; i < capacity; i++) {
+            if (temp[i] != null) {
+                table[indexFor(hash(temp[i].key.hashCode()))] = temp[i];
+            }
+        }
+
 
     }
 
     @Override
     public V get(K key) {
-        return null;
+        int index = indexFor((hash((key.hashCode()))));
+        return table[index] != null && table[index].key.equals(key) ? table[index].value : null;
     }
 
     @Override
     public boolean remove(K key) {
-        return false;
+        int index = indexFor((hash((key.hashCode()))));
+        if (table[index] != null && table[index].key.equals(key)) {
+            table[index] = null;
+            count--;
+            modCount++;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
-    public Iterator<K> iterator() {
-        return null;
+    public Iterator iterator() {
+        return new Iterator<>() {
+            private int index = 0;
+            private int iteratorPoint = 0;
+            private final int expectedCountMod = modCount;
+
+            @Override
+            public boolean hasNext() {
+                return iteratorPoint < count;
+            }
+
+            @Override
+            public MapEntry<K, V> next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException("Element no found!");
+                }
+                if (expectedCountMod != modCount) {
+                    throw new ConcurrentModificationException("Wait, and try again!");
+                }
+                while (index < table.length && table[index] == null) {
+                    index++;
+                }
+                iteratorPoint++;
+                return table[index++];
+            }
+        };
     }
 
     private static class MapEntry<K, V> {
