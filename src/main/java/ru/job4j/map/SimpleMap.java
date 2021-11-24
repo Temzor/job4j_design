@@ -15,15 +15,25 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean put(K key, V value) {
-        return false;
+       if (count >= capacity * LOAD_FACTOR) {
+           expand();
+       }
+        int index = indexFor((hash((key.hashCode()))));
+       if (table[index] == null) {
+           table[index] = new MapEntry<>(key, value);
+           count++;
+           modCount++;
+           return true;
+       }
+       return false;
     }
 
     private int hash(int hashCode) {
-        return 0;
+        return hashCode * 16 ^ hashCode >> 13;
     }
 
     private int indexFor(int hash) {
-        return 0;
+        return hash & (capacity - 1);
     }
 
     private void expand() {
