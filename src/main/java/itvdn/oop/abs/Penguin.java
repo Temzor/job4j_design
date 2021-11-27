@@ -5,4 +5,9 @@ public class Penguin extends Bird {
     public void move() {
         System.out.println("Swim.");
     }
+
+    @Override
+    public void sleep() {
+        System.out.println("I sleep on earth");
+    }
 }

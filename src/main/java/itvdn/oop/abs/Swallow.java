@@ -5,4 +5,9 @@ public class Swallow extends Bird {
     public void move() {
         System.out.println("Fly.");
     }
+
+    @Override
+    public void sleep() {
+        System.out.println("I sleep on earth");
+    }
 }
