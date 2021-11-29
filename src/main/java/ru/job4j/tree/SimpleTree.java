@@ -17,6 +17,7 @@ public class SimpleTree<E> implements Tree<E> {
             Node<E> eNode = optionalENode.get();
             eNode.children.add(new Node<>(child));
             result = true;
+
         }
         return result;
     }
