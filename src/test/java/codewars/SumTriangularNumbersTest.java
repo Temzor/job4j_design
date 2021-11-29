@@ -1,6 +1,5 @@
 package codewars;
 
-import codewars.SumTriangularNumbers;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
