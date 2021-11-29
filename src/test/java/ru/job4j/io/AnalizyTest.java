@@ -25,8 +25,8 @@ public class AnalizyTest {
             out.println("400 11:01:02");
             out.println("200 11:02:02");
         }
-        Analizy analizy = new Analizy();
-        analizy.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
+        Analyze analyze = new Analyze();
+        analyze.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
         StringBuilder result = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(target))) {
             in.lines().forEach(result::append);
@@ -46,8 +46,8 @@ public class AnalizyTest {
             out.println("500 11:01:02");
             out.println("200 11:02:02");
         }
-        Analizy analizy = new Analizy();
-        analizy.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
+        Analyze analyze = new Analyze();
+        analyze.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
         StringBuilder result = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(target))) {
             in.lines().forEach(result::append);
@@ -59,15 +59,15 @@ public class AnalizyTest {
     public void whenLogFile1() {
         String source = "source1.csv";
         String target = "target1.txt";
-        Analizy analizy = new Analizy();
-        analizy.unavailable(source, target);
+        Analyze analyze = new Analyze();
+        analyze.unavailable(source, target);
     }
 
     @Test
     public void whenLogFile2() {
         String source = "source2.csv";
         String target = "target2.txt";
-        Analizy analizy = new Analizy();
-        analizy.unavailable(source, target);
+        Analyze analyze = new Analyze();
+        analyze.unavailable(source, target);
     }
 }

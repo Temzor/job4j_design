@@ -7,7 +7,7 @@ import java.util.Set;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class AnalizeTest {
+public class AnalyzeTest {
 
     @Test
     public void whenNotChanged() {
@@ -17,7 +17,7 @@ public class AnalizeTest {
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u2, u3);
         assertThat(
-                Analize.diff(previous, current),
+                Analyze.diff(previous, current),
                 is(new Info(0, 0, 0))
         );
     }
@@ -30,7 +30,7 @@ public class AnalizeTest {
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, new User(2, "BB"), u3);
         assertThat(
-                Analize.diff(previous, current),
+                Analyze.diff(previous, current),
                 is(new Info(0, 1, 0))
         );
     }
@@ -43,7 +43,7 @@ public class AnalizeTest {
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u3);
         assertThat(
-                Analize.diff(previous, current),
+                Analyze.diff(previous, current),
                 is(new Info(0, 0, 1))
         );
     }
@@ -56,7 +56,7 @@ public class AnalizeTest {
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u2, u3, new User(4, "D"));
         assertThat(
-                Analize.diff(previous, current),
+                Analyze.diff(previous, current),
                 is(new Info(1, 0, 0))
         );
     }
@@ -69,7 +69,7 @@ public class AnalizeTest {
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(new User(1, "AA"), u2, new User(4, "D"));
         assertThat(
-                Analize.diff(previous, current),
+                Analyze.diff(previous, current),
                 is(new Info(1, 1, 1))
         );
     }
