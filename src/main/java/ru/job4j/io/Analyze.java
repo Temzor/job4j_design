@@ -15,10 +15,10 @@ public class Analyze {
                 int status = Integer.parseInt(data[0]);
                 String dateTime = data[1];
                 if ((status == 400 || status == 500) && status200Or300) {
-                    out.print(status + " | " + dateTime + ";");
+                    out.print(dateTime + ";");
                     status200Or300 = false;
                 } else if ((status == 200 || status == 300) && !status200Or300) {
-                    out.println(status + " | " + dateTime + ";");
+                    out.println(dateTime + ";");
                     status200Or300 = true;
                 }
             }
