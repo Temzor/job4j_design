@@ -19,12 +19,12 @@ public class Config {
     public void load() {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             reader.lines().forEach(r -> {
-                if (!r.isEmpty() && !r.startsWith("#") && r.contains("=")) {
-                    String[] element = r.split("=");
-                    if (element.length != 2 || element[0].isEmpty()) {
-                        throw new IllegalArgumentException("Unknown element passed");
+                if (!r.startsWith("#") && r.contains("=")) {
+                    String[] split = r.split("=");
+                        if (split.length != 2 || split[0].isEmpty()) {
+                            throw new IllegalArgumentException("Unknown element passed");
                     }
-                    values.put(element[0], element[1]);
+                    values.put(split[0], split[1]);
                 }
             });
         } catch (IOException e) {
