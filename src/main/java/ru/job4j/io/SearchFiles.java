@@ -17,6 +17,7 @@ public class SearchFiles implements FileVisitor<Path> {
 
     public SearchFiles(Predicate<Path> condition) {
         this.condition = condition;
+
     }
 
     @Override
