@@ -8,17 +8,19 @@ public class ArgsName {
     private final Map<String, String> values = new HashMap<>();
 
     public String get(String key) {
+        if (!values.containsKey(key)) {
+            throw new IllegalArgumentException("Parameter " + key + " is not exist");
+        }
         return values.get(key);
     }
 
     private void parse(String[] args) {
-        if (!validatorLengthArray(args)) {
-            for (String arg : args) {
-                if (!validatorValueArray(arg)) {
-                    String[] pair = arg.split("=");
-                    values.put(pair[0].substring(1), pair[1]);
-                }
+        for (String arg : args) {
+            String[] pair = arg.split("=");
+            if (pair.length != 2 || pair[0].length() < 2 || pair[0].charAt(0) != '-') {
+                throw new IllegalArgumentException("Incorrect parameter " + pair[0] + ". Usage -PARAMETER=VALUE.");
             }
+            values.put(pair[0].substring(1), pair[1]);
         }
     }
 
@@ -26,20 +28,6 @@ public class ArgsName {
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
-    }
-
-    public static boolean validatorLengthArray(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Parameter is not exist, no found key to run, example /-Xmx=512/, /-encoding=UTF-8./");
-        }
-        return false;
-    }
-
-    public static boolean validatorValueArray(String arg) {
-        if (!arg.startsWith("-") || !arg.contains("=") || arg.startsWith("=") || arg.endsWith("=") || arg.startsWith("-=")) {
-            throw new IllegalArgumentException("Incorrect parameter " + arg + ". Usage -PARAMETER=VALUE.");
-        }
-        return false;
     }
 
     public static void main(String[] args) {
