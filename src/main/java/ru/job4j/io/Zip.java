@@ -36,7 +36,7 @@ public class Zip {
         String exclude = argsName.get("e");
         Path packName = Paths.get(argsName.get("o"));
 
-        List<Path> filterList = search.search(source, p -> p.toFile().isFile()).stream().filter(p -> !p.toFile().getName().endsWith(exclude)).collect(Collectors.toList());
+        List<Path> filterList = search.search(source, p -> !p.toFile().getName().endsWith(exclude));
         packFiles(filterList, packName);
     }
 }
