@@ -26,27 +26,17 @@ public class Zip {
         System.out.println("ZIP SUCCESS");
     }
 
-    public void validArgs(ArgsName argsName) {
-        argsName.get("d");
-        argsName.get("e");
-        argsName.get("o");
-        if (!Path.of(argsName.get("d")).toFile().isDirectory()) {
-            throw new IllegalArgumentException(argsName.get("d") + "\" directory is not found");
-        }
-    }
-
     public static void main(String[] args) throws IOException {
+        if (args.length != 3) {
+            throw new IllegalArgumentException("Wrong amount of args, see example : -d=C:\\projects\\job4j_design -e=.txt -o=project.zip");
+        }
         ArgsName argsName = ArgsName.of(args);
         Search search = new Search();
-        Zip zip = new Zip();
-        zip.validArgs(argsName);
         Path source = Paths.get(argsName.get("d"));
         String exclude = argsName.get("e");
         Path packName = Paths.get(argsName.get("o"));
 
-        List<Path> listFiles = search.search(source, p -> p.toFile().isFile());
-        List<Path> filterList = listFiles.stream().filter(p -> !p.toFile().getName().endsWith(exclude)).collect(Collectors.toList());
-
+        List<Path> filterList = search.search(source, p -> p.toFile().isFile()).stream().filter(p -> !p.toFile().getName().endsWith(exclude)).collect(Collectors.toList());
         packFiles(filterList, packName);
     }
 }
