@@ -1,5 +1,6 @@
 package ru.job4j.io;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +29,10 @@ public class ArgsName {
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
+    }
+
+    public Map<String, String> getValues() {
+        return values;
     }
 
     public static void main(String[] args) {
