@@ -31,10 +31,6 @@ public class ArgsName {
         return names;
     }
 
-    public Map<String, String> getValues() {
-        return values;
-    }
-
     public static void main(String[] args) {
         ArgsName jvm = ArgsName.of(new String[] {"-Xmx=512", "-encoding=UTF-8"});
         System.out.println(jvm.get("Xmx"));
