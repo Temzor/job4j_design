@@ -2,14 +2,13 @@ package leetcode.easy;
 
 public class RemoveDuplicates {
     public int removeDuplicates(int[] nums) {
-        int count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i < nums.length - 1 && nums[i] == nums[i + 1]) {
-                continue;
+        int i = 0;
+        for (int n : nums) {
+            if (i == 0 || n > nums[i - 1]) {
+                nums[i++] = n;
             }
-            nums[count] = nums[i];
-            count++;
         }
-        return count;
+        System.out.println(i);
+        return i;
     }
 }
