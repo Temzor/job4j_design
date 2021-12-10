@@ -1,6 +1,7 @@
 package ru.job4j.question;
 
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class User {
 
@@ -43,5 +44,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .toString();
     }
 }
