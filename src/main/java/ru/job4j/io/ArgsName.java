@@ -1,18 +1,22 @@
 package ru.job4j.io;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ArgsName {
 
-    private final Map<String, String> values = new HashMap<>();
+    private static final Map<String, String> VALUES = new HashMap<>();
+
 
     public String get(String key) {
-        if (!values.containsKey(key)) {
+        if (!VALUES.containsKey(key)) {
             throw new IllegalArgumentException("Parameter " + key + " is not exist");
         }
-        return values.get(key);
+        return VALUES.get(key);
+    }
+
+    public static Map<String, String> getValues() {
+        return VALUES;
     }
 
     private void parse(String[] args) {
@@ -21,7 +25,7 @@ public class ArgsName {
             if (pair.length != 2 || pair[0].length() < 2 || pair[0].charAt(0) != '-') {
                 throw new IllegalArgumentException("Incorrect parameter " + pair[0] + ". Usage -PARAMETER=VALUE.");
             }
-            values.put(pair[0].substring(1), pair[1]);
+            VALUES.put(pair[0].substring(1), pair[1]);
         }
     }
 
