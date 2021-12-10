@@ -17,12 +17,12 @@ public class Config {
     }
 
     public void load() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            reader.lines().forEach(r -> {
-                if (!r.startsWith("#") && r.contains("=")) {
-                    String[] split = r.split("=");
-                        if (split.length != 2 || split[0].isEmpty()) {
-                            throw new IllegalArgumentException("Unknown element passed");
+        try (BufferedReader in = new BufferedReader(new FileReader(path))) {
+            in.lines().forEach(s -> {
+                if (!s.startsWith("#") && s.contains("=")) {
+                    String[] split = s.split("=");
+                    if (split.length != 2 || split[0].isEmpty()) {
+                        throw new IllegalArgumentException("Unknown element passed.");
                     }
                     values.put(split[0], split[1]);
                 }
@@ -30,10 +30,11 @@ public class Config {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public String value(String key) {
-        return values.get(key);
+      return values.get(key);
     }
 
     @Override
@@ -48,7 +49,7 @@ public class Config {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Config("C:\\projects\\job4j_design\\ app.properties"));
+        System.out.println(new Config("app.properties"));
     }
 
 }
