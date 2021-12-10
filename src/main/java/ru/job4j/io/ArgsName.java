@@ -1,5 +1,7 @@
 package ru.job4j.io;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +11,7 @@ public class ArgsName {
 
 
     public String get(String key) {
-        if (!VALUES.containsKey(key)) {
+        if (!VALUES.containsKey(key) || key == null) {
             throw new IllegalArgumentException("Parameter " + key + " is not exist");
         }
         return VALUES.get(key);
@@ -19,7 +21,7 @@ public class ArgsName {
         return VALUES;
     }
 
-    private void parse(String[] args) {
+    private void parse(String @NotNull [] args) {
         for (String arg : args) {
             String[] pair = arg.split("=");
             if (pair.length != 2 || pair[0].length() < 2 || pair[0].charAt(0) != '-') {
