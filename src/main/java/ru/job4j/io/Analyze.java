@@ -4,28 +4,28 @@ import java.io.*;
 
 public class Analyze {
     public void unavailable(String source, String target) {
-        try(
-                BufferedReader in = new BufferedReader(new FileReader(source));
-                PrintWriter out = new PrintWriter(new FileOutputStream(target))
-        ) {
-            boolean status200Or300 = true;
+        try (BufferedReader in = new BufferedReader(new FileReader(source));
+        PrintWriter out = new PrintWriter(new FileOutputStream(target))) {
+            boolean status200 = true;
             while (in.ready()) {
                 String notice = in.readLine();
                 String[] data = notice.split(" ");
-                int status = Integer.parseInt(data[0]);
-                String dateTime = data[1];
-                if ((status == 400 || status == 500) && status200Or300) {
-                    out.print(dateTime + ";");
-                    status200Or300 = false;
-                } else if ((status == 200 || status == 300) && !status200Or300) {
-                    out.println(dateTime + ";");
-                    status200Or300 = true;
+                int startStatus = Integer.parseInt(data[0]);
+                String startDate = data[1];
+                if ((startStatus == 400 || startStatus == 500) && status200) {
+                    out.println(startDate + ";");
+                    status200 = false;
+                } else if ((startStatus == 200 || startStatus == 300) && !status200) {
+                    out.println(startDate + ";");
+                    status200 = true;
                 }
+
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
