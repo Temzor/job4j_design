@@ -1,33 +1,24 @@
 package ru.job4j.io;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class ArgsName {
 
-    private static final Map<String, String> VALUES = new HashMap<>();
-
+    private final Map<String, String> values = new HashMap<>();
 
     public String get(String key) {
-        if (!VALUES.containsKey(key) || key == null) {
-            throw new IllegalArgumentException("Parameter " + key + " is not exist");
-        }
-        return VALUES.get(key);
+        return values.get(key);
     }
 
-    public static Map<String, String> getValues() {
-        return VALUES;
-    }
-
-    private void parse(String @NotNull [] args) {
-        for (String arg : args) {
-            String[] pair = arg.split("=");
-            if (pair.length != 2 || pair[0].length() < 2 || pair[0].charAt(0) != '-') {
-                throw new IllegalArgumentException("Incorrect parameter " + pair[0] + ". Usage -PARAMETER=VALUE.");
+    private void parse(String[] args) {
+        if (validatorLengthArray(args)) {
+            for (String arg : args) {
+                if (validatorValueArray(arg)) {
+                    String[] pair = arg.split("=");
+                    values.put(pair[0].substring(1), pair[1]);
+                }
             }
-            VALUES.put(pair[0].substring(1), pair[1]);
         }
     }
 
@@ -36,6 +27,22 @@ public class ArgsName {
         names.parse(args);
         return names;
     }
+
+    public static boolean validatorLengthArray(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Parameter is not exist, no found key to run, example /-Xmx=512/, /-encoding=UTF-8./");
+        }
+        return true;
+    }
+
+    public static boolean validatorValueArray(String arg) {
+        if (!arg.startsWith("-") || !arg.contains("=") || arg.startsWith("=") || arg.endsWith("=") || arg.startsWith("-=")) {
+            throw new IllegalArgumentException("Incorrect parameter " + arg + ". Usage -PARAMETER=VALUE.");
+        }
+        return true;
+    }
+
+
 
     public static void main(String[] args) {
         ArgsName jvm = ArgsName.of(new String[] {"-Xmx=512", "-encoding=UTF-8"});
