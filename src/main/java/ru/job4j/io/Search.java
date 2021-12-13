@@ -10,6 +10,7 @@ import java.util.function.Predicate;
 
 public class Search {
     public static void main(String[] args) throws IOException {
+        Search search = new Search();
         if (args.length != 2) {
             throw new IllegalArgumentException("Root folder is null. Usage java -jar dir.jar ROOT_FOLDER.");
         }
@@ -18,10 +19,10 @@ public class Search {
         if (!Files.isDirectory(start)) {
             throw new NoSuchFileException("Entered such ROOT_FOLDER exist.");
         }
-        search(start, p -> p.toFile().getName().endsWith(extension)).forEach(System.out::println);
+        search.search(start, p -> p.toFile().getName().endsWith(extension)).forEach(System.out::println);
     }
 
-    public static List<Path> search(Path root, Predicate<Path> condition) throws IOException {
+    public  List<Path> search(Path root, Predicate<Path> condition) throws IOException {
         SearchFiles searcher = new SearchFiles(condition);
         Files.walkFileTree(root, searcher);
         return searcher.getPaths();
