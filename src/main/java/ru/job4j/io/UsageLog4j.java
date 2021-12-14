@@ -10,10 +10,17 @@ public class UsageLog4j {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        LOG.trace("trace message");
-        LOG.debug("debug message");
-        LOG.info("info message");
-        LOG.warn("warn message");
-        LOG.error("error message");
+        byte maxByte = 127;
+        short maxShort = 32767;
+        char charH = 72;
+        int maxInt = 2147483647;
+        long maxLong = 9223372036854775807L;
+        float floatPiTwo = 3.14f;
+        double doublePiThree = 3.141;
+        boolean booleanTrue = true;
+
+
+        LOG.debug("Primitive types of Java, byte: {}, short : {}, char : {}, int : {}, long : {}, float : {}, double : {},  boolean : {}",
+                maxByte, maxShort, charH, maxInt, maxLong, floatPiTwo, doublePiThree, booleanTrue);
     }
 }
