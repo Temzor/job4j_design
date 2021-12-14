@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class EchoServer {
     public static void main(String[] args) throws IOException {
-        try (ServerSocket server = new ServerSocket(9000)) {
+        try (ServerSocket server = new ServerSocket(9005)) {
             while (!server.isClosed()) {
                 Socket socket = server.accept();
                 try (OutputStream out = socket.getOutputStream();
@@ -19,9 +19,12 @@ public class EchoServer {
                         String[] values = line.split(" ");
                         if ("GET".equals(values[0])) {
                             switch (values[1]) {
-                                case "/?msg=Bye" -> server.close();
-                                case "/?msg=Hello" -> out.write("Hello\r\n\r\n".getBytes());
-                                default -> out.write("No message\r\n\r\n".getBytes());
+                                case "/?msg=Bye" -> {
+                                    out.write("Bye bye, my dear friend".getBytes());
+                                    server.close();
+                                }
+                                case "/?msg=Hello" -> out.write("Hello, my dear friend".getBytes());
+                                default -> out.write("What did you say?".getBytes());
                             }
                         }
                     }
