@@ -1,4 +1,4 @@
-package ru.job4j.serialization.homework.json;
+package ru.job4j.io.serialization.homework.json;
 
 
 import java.util.Arrays;

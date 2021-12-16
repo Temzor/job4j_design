@@ -1,7 +1,6 @@
-package ru.job4j.serialization.homework.xml;
+package ru.job4j.io.serialization.homework.xml;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class Family {
     private final String surname;

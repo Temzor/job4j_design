@@ -1,4 +1,4 @@
-package ru.job4j.serialization.homework.xml;
+package ru.job4j.io.serialization.homework.xml;
 
 
 public class Main {
