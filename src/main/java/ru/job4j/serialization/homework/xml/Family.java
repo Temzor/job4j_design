@@ -21,11 +21,14 @@ public class Family {
     @Override
     public String toString() {
         return "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
-                + "\n<surname=" + "\"" + surname + "\"" + "/>"
-                + " \n\t<residents=" + "\"" + residents + "\"" + "/>"
-                + " \n\t<countPeople=" + "\"" + countPeople + "\"" + "/>"
+                + "\n<family surname=" + "\"" + surname + "\"" + ">"
+                + " \n\t<residents citizenship=" + "\"" + residents + "\"" + "/>"
+                + " \n\t<countPeople count=" + "\"" + countPeople + "\"" + "/>"
                 + " \n\t<address" + residenceAddress + "\""
-                + " \n\tsexChildren's=" + "\"" +  Arrays.toString(sexChildren) + "\""
-                + "\n<surname/>";
+                + " \n\t<sexchildren>"
+                +  "\n\t\t<sex>" + Arrays.toString(new String[]{sexChildren[0]}) + "</sex>"
+                +  "\n\t\t<sex>" + Arrays.toString(new String[]{sexChildren[1]}) + "</sex>"
+                + " \n\t</sexchildren>"
+                + "\n</family>";
     }
 }
