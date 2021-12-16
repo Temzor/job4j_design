@@ -1,78 +1,81 @@
-//package ru.job4j.io;
-//
-//import java.io.*;
-//import java.nio.charset.Charset;
-//import java.util.*;
-//
-//
-//public class CSVReader {
-//    public static void handle(ArgsName argsName) {
-//        int count = 0;
-//        StringBuilder result = new StringBuilder();
-//        try (var scanner = new Scanner(new FileReader(ArgsName.getValues().get("path")))) {
-//            List<Integer> indexList = new ArrayList<>();
-//            String[] filters = ArgsName.getValues().get("filter").split(",");
-//            while (scanner.hasNextLine()) {
-//                String line = scanner.nextLine();
-//                String[] strings = line.split(ArgsName.getValues().get("delimiter"));
-//                List<String> stringList = Arrays.asList(strings);
-//                for (String filter : filters) {
-//                    if (stringList.contains(filter)) {
-//                        indexList.add(stringList.indexOf(filter));
-//                    }
-//                }
-//                for (Integer index : indexList) {
-//                    result.append(stringList.get(index));
-//                    count++;
-//                    if (count < indexList.size()) {
-//                        result.append(";");
-//                    }
-//                }
-//                if (scanner.hasNext()) {
-//                    result.append(System.lineSeparator());
-//                    count = 0;
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        if ("stdout".equals(ArgsName.getValues().get("out"))) {
-//            System.out.println(result);
-//        } else {
-//            outputResult(result);
-//        }
-//    }
-//
-//
-//    public static void checkFileAddress(Map<String, String> values) {
-//        File file = new File(values.get("path"));
-//        if (!file.exists()) {
-//            throw new IllegalArgumentException(String.format("The file does not exist %s", file.getAbsoluteFile()));
-//        }
-//    }
-//
-//    public static void validationTokenKeys(Map<String, String> values) {
-//        if (values.size() != 4 || !values.containsKey("path") || !values.containsKey("delimiter")
-//                || !values.containsKey("out") || !values.containsKey("filter")) {
-//            throw new IllegalArgumentException("Incorrect entering parameters to run. See example: -path=file.csv -delimiter=\";\"  -out=stdout -filter=name,age");
-//        }
-//    }
-//
-//    private static void outputResult(StringBuilder result) {
-//        try (PrintWriter printWriter = new PrintWriter(new FileWriter(ArgsName.getValues().get("out"),
-//                Charset.forName("WINDOWS-1251"), true))) {
-//            printWriter.println(result);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//
-//    public static void main(String[] args) {
-//        ArgsName argsName = new ArgsName();
-//        Map<String, String> mapValues = ArgsName.getValues();
-//        validationTokenKeys(mapValues);
-//        checkFileAddress(mapValues);
-//        handle(argsName);
-//    }
-//}
+package ru.job4j.io;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
+public class CSVReader {
+    private final List<String> values = new ArrayList<>();
+    private final Map<String, Integer> nameColumn = new HashMap<>();
+
+    public static void handle(ArgsName argsName) {
+        String path = argsName.get("path");
+        String delimiter = argsName.get("delimiter");
+        String out = argsName.get("out");
+        String filter = argsName.get("filter");
+        if (!new File(path).isFile() || path.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Param -path is not correct. Usage -path=File.CSV");
+        }
+        if (!out.equals("stdout") && !new File(out).isFile()) {
+            throw new IllegalArgumentException(
+                    "Param -out is not correct. "
+                            + "Usage -out=stdout for output to the console, "
+                            + "or -out=File.CSV for output to file");
+        }
+        if (filter.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Param -filter is not correct. "
+                            + "Usage -filter=COLUMN1,COLUMN2,...COLUMN3");
+        }
+        CSVReader csvReader = new CSVReader();
+        csvReader.loadCSV(path, delimiter, filter);
+        csvReader.stdOut(csvReader.values, out);
+    }
+
+    private void setColumn(String column, String delimiter) {
+        int num = 0;
+        for (String name : column.split(delimiter)) {
+            this.nameColumn.put(name, num++);
+        }
+    }
+
+    private void loadCSV(String path, String delimiter, String filter) {
+        try (Scanner scanner = new Scanner(new File(path), StandardCharsets.UTF_8)) {
+            String[] nameFilter = filter.split(",");
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] values = line.split(delimiter);
+                if (this.nameColumn.isEmpty()) {
+                    setColumn(line, delimiter);
+                }
+                StringJoiner joiner = new StringJoiner(delimiter);
+                for (String name : nameFilter) {
+                    joiner.add(values[nameColumn.get(name)]);
+                }
+                this.values.add(joiner.toString());
+                this.values.add(System.lineSeparator());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void stdOut(List<String> list, String path) {
+        if (path.equals("stdout")) {
+            list.forEach(System.out::print);
+            return;
+        }
+        try (PrintWriter out = new PrintWriter(
+                new FileWriter(path, StandardCharsets.UTF_8, true))) {
+            list.forEach(out::print);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        ArgsName argsName = ArgsName.of(args);
+        CSVReader.handle(argsName);
+    }
+}

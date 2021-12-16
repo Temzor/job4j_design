@@ -1,12 +1,10 @@
 package ru.job4j.io;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class ConsoleChat {
 
@@ -51,7 +49,7 @@ public class ConsoleChat {
         try (BufferedReader bufferedReader = new BufferedReader(
                 new FileReader(botAnswers, StandardCharsets.UTF_8))) {
             bufferedReader.lines().forEach(robotPhrase::add);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return robotPhrase;
