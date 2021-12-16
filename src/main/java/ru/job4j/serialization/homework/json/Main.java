@@ -1,9 +1,7 @@
-package ru.job4j.serialization.homework;
+package ru.job4j.serialization.homework.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import java.util.Arrays;
 
 
 public class Main {

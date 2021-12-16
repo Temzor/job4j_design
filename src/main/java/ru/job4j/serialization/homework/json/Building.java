@@ -1,8 +1,7 @@
-package ru.job4j.serialization.homework;
+package ru.job4j.serialization.homework.json;
 
 
 import java.util.Arrays;
-import java.util.StringJoiner;
 
 public class Building {
     private final String city;

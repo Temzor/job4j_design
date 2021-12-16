@@ -1,6 +1,5 @@
-package ru.job4j.serialization.homework;
+package ru.job4j.serialization.homework.json;
 
-import java.util.StringJoiner;
 
 public class Street {
     private final String nameStreet;
