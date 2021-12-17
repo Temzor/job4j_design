@@ -14,5 +14,9 @@ public class Street {
                 + "street='" + nameStreet
                 + '}';
     }
+
+    public String getNameStreet() {
+        return nameStreet;
+    }
 }
 
