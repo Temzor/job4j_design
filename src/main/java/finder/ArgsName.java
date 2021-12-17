@@ -41,14 +41,4 @@ public class ArgsName {
         }
         return true;
     }
-
-
-
-    public static void main(String[] args) {
-        ru.job4j.io.ArgsName jvm = ru.job4j.io.ArgsName.of(new String[] {"-Xmx=512", "-encoding=UTF-8"});
-        System.out.println(jvm.get("Xmx"));
-
-        ru.job4j.io.ArgsName zip = ru.job4j.io.ArgsName.of(new String[] {"-out=project.zip", "-encoding=UTF-8"});
-        System.out.println(zip.get("out"));
-    }
 }

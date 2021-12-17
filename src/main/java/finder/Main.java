@@ -1,11 +1,7 @@
 package finder;
 
-import java.io.File;
-import java.io.FileWriter;
+
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -25,11 +21,6 @@ public class Main {
         for (Path path : filterList) {
             System.out.println(path);
         }
-//        try (PrintWriter printWriter = new PrintWriter(
-//                new FileWriter((File) filterList, StandardCharsets.UTF_8, true)
-//        )) {
-//
-//        }
 
     }
 }
