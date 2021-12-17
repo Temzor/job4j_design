@@ -28,4 +28,24 @@ public class Building {
                 + ", build_done=" + Arrays.toString(buildDone)
                 + '}';
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public boolean getIsCommerce() {
+        return isCommerce;
+    }
+
+    public int getCountFloors() {
+        return countFloors;
+    }
+
+    public Street getStreet() {
+        return street;
+    }
+
+    public int[] getBuildDone() {
+        return buildDone;
+    }
 }
