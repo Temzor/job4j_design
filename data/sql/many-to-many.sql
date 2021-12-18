@@ -10,6 +10,6 @@ create table model(
 
 create table car_model(
     id serial primary key,
-    car_id int references car(id) unique,
-    model_id int references model(id) unique
+    car_id int references car(id),
+    model_id int references model(id)
 );
