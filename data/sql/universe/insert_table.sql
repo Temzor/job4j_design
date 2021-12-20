@@ -11,10 +11,10 @@ INSERT INTO galaxies(calm_galaxy_id, active_galaxy_id)
 VALUES (1, 1), (2, 2), (3, 2);
 
 INSERT INTO celestial_bodies(name, galaxies_id)
-VALUES ('Звезды', 3), ('Планеты', 4);
+VALUES ('Звезды', 1), ('Планеты', 2);
 
 INSERT INTO star(name, celestial_bodies_id)
-VALUES ('Гиганты', 7), ('Белые карлики', 7), ('Сверхгиганты', 8);
+VALUES ('Гиганты', 1), ('Белые карлики', 1), ('Сверхгиганты', 1);
 
 INSERT INTO planet(name, celestial_bodies_id)
-VALUES ('Газовые гиганты', 8), ('Карликовые планеты', 8), ('Планеты земной группы', 8);
+VALUES ('Газовые гиганты', 2), ('Карликовые планеты', 2), ('Планеты земной группы', 2);
