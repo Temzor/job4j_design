@@ -1,90 +1,74 @@
 package ru.job4j.jdbc;
 
-import ru.job4j.io.Config;
-
+import java.io.FileInputStream;
 import java.sql.*;
 import java.util.Properties;
 import java.util.StringJoiner;
 
 public class TableEditor implements AutoCloseable {
-
     private Connection connection;
+    private final Properties properties;
 
-    private Properties properties;
-
-    public TableEditor() throws SQLException, ClassNotFoundException {
+    public TableEditor(Properties properties) throws SQLException, ClassNotFoundException {
         this.properties = properties;
         initConnection();
     }
 
     private void initConnection() throws ClassNotFoundException, SQLException {
-        Config config = new Config("C:/projects/job4j_design/data/app.properties");
-        config.load();
-        Class.forName(config.value("hibernate.connection.driver_class"));
-        String url = config.value("hibernate.connection.url");
-        String login = config.value("hibernate.connection.username");
-        String password = config.value("hibernate.connection.password");
-        try {
-            connection = DriverManager.getConnection(url, login, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Class.forName(properties.getProperty("postgres.connection.driver_class"));
+        String url = properties.getProperty("postgres.connection.url");
+        String login = properties.getProperty("postgres.connection.username");
+        String password = properties.getProperty("postgres.connection.password");
+        connection = DriverManager.getConnection(url, login, password);
     }
 
-    public void createTable(String tableName) {
-        String sql = String.format("CREATE TABLE IF NOT EXISTS %s ();", tableName);
-        execSql(sql);
-    }
-
-    public void dropTable(String tableName) {
-        String sql = String.format("DROP TABLE %s;", tableName);
-        execSql(sql);
-    }
-
-    public void addColumn(String tableName, String columnName, String type) {
-        String sql = String.format("ALTER TABLE %s ADD %s %s;", tableName, columnName, type);
-        execSql(sql);
-    }
-
-    public void dropColumn(String tableName, String columnName) {
-        String sql = String.format("ALTER TABLE %s DROP COLUMN IF EXISTS %s;", tableName, columnName);
-        execSql(sql);
-    }
-
-    public void renameColumn(String tableName, String columnName, String newColumnName) {
-        String sql = String.format("ALTER TABLE %s RENAME COLUMN %s TO %s;", tableName, columnName, newColumnName);
-        execSql(sql);
-    }
-
-    public void execSql(String query) {
-        try {
-            Statement statement = connection.createStatement();
+    public void execSql(String query) throws SQLException {
+        try (Statement statement = connection.createStatement()) {
             statement.execute(query);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-
     }
 
+    public void createTable(String tableName) throws Exception {
+        execSql(String.format("CREATE TABLE IF NOT EXISTS %s ();", tableName));
+        System.out.println(getTableScheme(connection, tableName));
+    }
+
+    public void dropTable(String tableName) throws Exception {
+        execSql(String.format("DROP TABLE IF EXISTS %s;", tableName));
+    }
+
+    public void addColumn(String tableName, String columnName, String type) throws Exception {
+        execSql(String.format("ALTER TABLE %s ADD %s %s;", tableName, columnName, type));
+        System.out.println(getTableScheme(connection, tableName));
+    }
+
+    public void dropColumn(String tableName, String columnName) throws Exception {
+        execSql(String.format("ALTER TABLE %s DROP COLUMN IF EXISTS %s;", tableName, columnName));
+        System.out.println(getTableScheme(connection, tableName));
+    }
+
+    public void renameColumn(String tableName, String columnName, String newColumnName) throws Exception {
+        execSql(String.format("ALTER TABLE %s RENAME COLUMN %s TO %s;", tableName, columnName, newColumnName));
+        System.out.println(getTableScheme(connection, tableName));
+    }
 
     public static String getTableScheme(Connection connection, String tableName) throws Exception {
         var rowSeparator = "-".repeat(30).concat(System.lineSeparator());
         var header = String.format("%-15s|%-15s%n", "NAME", "TYPE");
-        var buffer = new StringJoiner(rowSeparator, rowSeparator, rowSeparator);
-        buffer.add(header);
+        var bufer = new StringJoiner(rowSeparator, rowSeparator, rowSeparator);
+        bufer.add(header);
         try (var statement = connection.createStatement()) {
             var selection = statement.executeQuery(String.format(
                     "select * from %s limit 1", tableName
             ));
             var metaData = selection.getMetaData();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
-                buffer.add(String.format("%-15s|%-15s%n",
+                bufer.add(String.format("%-15s|%-15s%n",
                         metaData.getColumnName(i), metaData.getColumnTypeName(i))
                 );
             }
         }
-        return buffer.toString();
+        return bufer.toString();
     }
 
     @Override
@@ -95,26 +79,16 @@ public class TableEditor implements AutoCloseable {
     }
 
     public static void main(String[] args) throws Exception {
-        String dbName = "test_db";
-        TableEditor tableEditor = new TableEditor();
-        tableEditor.initConnection();
-        tableEditor.createTable(dbName);
-        tableEditor.addColumn(dbName, "test", "text");
-        tableEditor.renameColumn(dbName, "test", "test_rename");
-        tableEditor.dropColumn(dbName, "test_rename");
-        tableEditor.dropTable(dbName);
-
-        DatabaseMetaData databaseMetaData = tableEditor.connection.getMetaData();
-        try {
-            ResultSet tables = databaseMetaData.getTables(null, null, dbName, null);
-            if (tables.next()) {
-                System.out.println("Table exist");
-            } else {
-                System.out.println("Table not exist");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println(getTableScheme(tableEditor.connection, "test_db"));
+        String tableName = "test_db";
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("C:/projects/job4j_design/data/app.properties"));
+        TableEditor tableEditor = new TableEditor(properties);
+        tableEditor.createTable(tableName);
+        tableEditor.addColumn(tableName, "test_column", "text");
+        tableEditor.renameColumn(tableName, "test_column", "test_column_rename");
+        tableEditor.dropColumn(tableName, "test_column_rename");
+        tableEditor.addColumn(tableName, "test_column", "text");
+        tableEditor.dropTable(tableName);
+        tableEditor.close();
     }
 }
