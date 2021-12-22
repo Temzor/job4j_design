@@ -1,4 +1,4 @@
-package ru.job4j.io;
+package zip;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

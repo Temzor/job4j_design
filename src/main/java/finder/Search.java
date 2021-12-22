@@ -1,6 +1,6 @@
 package finder;
 
-import ru.job4j.io.SearchFiles;
+import zip.SearchFiles;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 
 public class Search {
     public static void main(String[] args) throws IOException {
-        ru.job4j.io.Search search = new ru.job4j.io.Search();
+        zip.Search search = new zip.Search();
         if (args.length != 2) {
             throw new IllegalArgumentException("Root folder is null. Usage java -jar dir.jar ROOT_FOLDER.");
         }

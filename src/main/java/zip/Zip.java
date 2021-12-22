@@ -1,4 +1,4 @@
-package ru.job4j.io;
+package zip;
 
 import java.io.*;
 import java.nio.file.Path;
