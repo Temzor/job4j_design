@@ -1,4 +1,4 @@
-package ru.job4j.io.duplicates;
+package duplicates;
 
 import java.util.Objects;
 import java.util.StringJoiner;
