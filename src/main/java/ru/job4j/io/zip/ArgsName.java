@@ -1,4 +1,4 @@
-package zip;
+package ru.job4j.io.zip;
 
 import java.util.HashMap;
 import java.util.Map;

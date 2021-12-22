@@ -1,6 +1,6 @@
 package ru.job4j.io;
 
-import zip.ArgsName;
+import ru.job4j.io.zip.ArgsName;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
