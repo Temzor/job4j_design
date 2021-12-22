@@ -19,12 +19,14 @@ public class ImportDB {
         this.dump = dump;
     }
 
-    public List<User> load() throws IOException {
+    public List<User> load() {
         List<User> users = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dump))) {
             bufferedReader.lines()
                     .filter(l -> l.split(";").length > 1 && l.split(";")[1].contains("@"))
                     .forEach(l -> users.add(new User(l.split(";")[0], l.split(";")[1])));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return users;
     }
