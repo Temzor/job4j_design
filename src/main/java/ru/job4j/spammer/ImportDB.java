@@ -22,9 +22,12 @@ public class ImportDB {
     public List<User> load() {
         List<User> users = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dump))) {
-            bufferedReader.lines()
-                    .filter(l -> l.split(";").length > 1 && l.split(";")[1].contains("@"))
-                    .forEach(l -> users.add(new User(l.split(";")[0], l.split(";")[1])));
+            bufferedReader.lines().forEach(s -> {
+                String[] data = s.split(";");
+                if (data.length != 2 || data[0].isEmpty() || data[1].isEmpty() || !data[1].contains("@")) {
+                    throw new IllegalArgumentException("name or email incorrect, check your dump file.");
+                }
+            });
         } catch (IOException e) {
             e.printStackTrace();
         }
