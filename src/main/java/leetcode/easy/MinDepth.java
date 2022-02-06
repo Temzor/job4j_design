@@ -5,6 +5,8 @@ public class MinDepth {
         if (root == null) {
             return 0;
         }
-        return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+        int left = minDepth(root.left);
+        int right = minDepth(root.right);
+        return (left == 0 || right == 0) ? left + right + 1 : Math.min(left, right) + 1;
     }
 }
