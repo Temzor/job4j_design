@@ -13,7 +13,7 @@ public class PostorderTraversal {
         while (!stack.isEmpty() || p != null) {
             if (p != null) {
                 stack.push(p);
-                result.add(p.val);  // Add before going to children
+                result.add(p.val);
                 p = p.left;
             } else {
                 TreeNode node = stack.pop();
