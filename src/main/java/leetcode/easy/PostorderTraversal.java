@@ -1,24 +1,22 @@
 package leetcode.easy;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 public class PostorderTraversal {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        Deque<TreeNode> stack = new ArrayDeque<>();
-        TreeNode p = root;
-        while (!stack.isEmpty() || p != null) {
-            if (p != null) {
-                stack.push(p);
-                result.add(p.val);
-                p = p.left;
-            } else {
-                TreeNode node = stack.pop();
-                p = node.right;
+    public List<Integer> postorderTraversal(TreeNode root) {
+        LinkedList<Integer> result = new LinkedList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                stack.push(root);
+                result.addFirst(root.val);
+                root = root.right;
             }
+            root = stack.pop();
+            root = root.left;
         }
         return result;
     }
