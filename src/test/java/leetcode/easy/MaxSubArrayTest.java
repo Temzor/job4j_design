@@ -24,5 +24,4 @@ public class MaxSubArrayTest {
         int[] expected = new int[] {1};
         Assert.assertEquals(1, subArray.maxSubArray(expected));
     }
-
 }
