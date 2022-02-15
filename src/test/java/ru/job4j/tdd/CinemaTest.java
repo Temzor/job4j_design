@@ -6,8 +6,6 @@ import static org.junit.Assert.assertNull;
 import org.hamcrest.MatcherAssert;
 import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
