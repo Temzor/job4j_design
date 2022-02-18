@@ -2,6 +2,7 @@ package leetcode.easy;
 
 import org.junit.Test;
 import org.junit.Assert;
+import ru.leetcode.easy.PlusOne;
 
 public class PlusOneTest {
     @Test

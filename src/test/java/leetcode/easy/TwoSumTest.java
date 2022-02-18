@@ -2,7 +2,7 @@ package leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import ru.leetcode.easy.TwoSum;
 
 
 public class TwoSumTest {

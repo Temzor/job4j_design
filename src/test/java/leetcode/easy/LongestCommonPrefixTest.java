@@ -1,6 +1,7 @@
 package leetcode.easy;
 
 import junit.framework.TestCase;
+import ru.leetcode.easy.LongestCommonPrefix;
 
 
 public class LongestCommonPrefixTest extends TestCase {

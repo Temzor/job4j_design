@@ -1,7 +1,7 @@
 package leetcode.easy;
 
-import org.hamcrest.MatcherAssert;
 import org.junit.Test;
+import ru.leetcode.easy.ValidParentheses;
 
 import static org.junit.Assert.*;
 

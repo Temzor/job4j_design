@@ -2,6 +2,7 @@ package leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.leetcode.easy.TitleToNumber;
 
 public class TitleToNumberTest {
     @Test

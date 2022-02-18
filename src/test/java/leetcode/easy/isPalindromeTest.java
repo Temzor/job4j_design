@@ -1,6 +1,7 @@
 package leetcode.easy;
 
 import org.junit.Test;
+import ru.leetcode.easy.IsPalindrome;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

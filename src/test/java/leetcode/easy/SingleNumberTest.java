@@ -1,6 +1,8 @@
 package leetcode.easy;
 
 import org.junit.jupiter.api.Test;
+import ru.leetcode.easy.SingleNumber;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SingleNumberTest {

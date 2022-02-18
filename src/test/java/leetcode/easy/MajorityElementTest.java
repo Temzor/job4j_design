@@ -2,6 +2,7 @@ package leetcode.easy;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.leetcode.easy.MajorityElement;
 
 class MajorityElementTest {
     @Test
