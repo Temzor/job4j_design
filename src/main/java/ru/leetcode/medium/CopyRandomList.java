@@ -1,29 +1,18 @@
 package ru.leetcode.medium;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CopyRandomList {
     public Node copyRandomList(Node head) {
+        Map<Node, Node> map = new HashMap<>();
         if (head == null) {
             return null;
         }
-
-        Node cursor = head;
-        while (cursor != null) {
-            Node next = cursor.next;
-            cursor.next = new Node(cursor.val, next, null);
-            cursor = next;
-        }
-
-        cursor = head;
-        Node copyHead = head.next;
-        while (cursor != null) {
-            Node next = cursor.next.next;
-            Node copy = cursor.next;
-            cursor.next = next.next;
-            if (next != null) {
-                copy.next = next.next;
-            }
-            cursor = next;
-        }
-        return copyHead;
+        Node temp = new Node(head.val);
+        map.put(head, temp);
+        temp.next = copyRandomList(head.next);
+        temp.random = map.get(head.random);
+        return temp;
     }
 }
