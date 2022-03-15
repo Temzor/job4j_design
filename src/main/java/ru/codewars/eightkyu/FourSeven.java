@@ -1,15 +1,9 @@
 package ru.codewars.eightkyu;
 
+import static java.util.Map.of;
+
 public class FourSeven {
     public int fourSeven(int n) {
-        while (n == 4) {
-            return 7;
-        }
-
-        while (n == 7) {
-            return 4;
-        }
-
-        return 0;
+        return of(4, 7, 7, 4).getOrDefault(n, 0);
     }
 }
