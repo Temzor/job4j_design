@@ -17,7 +17,7 @@ public class NameMeTest  extends TestCase {
                 nameMe.getLastName());
 
         Assert.assertEquals("Verifying full name. Object returned should contain full name: John Doe",
-                "JohnDoe",
+                "John Doe",
                 nameMe.getFullName());
 
         Assert.assertEquals("Verifying full name. Object returned should contain full name: John Doe",
