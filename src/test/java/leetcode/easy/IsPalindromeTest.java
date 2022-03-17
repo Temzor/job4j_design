@@ -7,7 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 
-public class isPalindromeTest {
+public class IsPalindromeTest {
     @Test
     public void testOne() {
         IsPalindrome isPalindrome = new IsPalindrome();

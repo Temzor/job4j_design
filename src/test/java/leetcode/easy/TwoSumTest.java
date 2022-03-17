@@ -10,7 +10,7 @@ public class TwoSumTest {
     @Test
     public void testOne() {
         int[] result = new int[] {0, 1};
-        int[] expected = new TwoSum().twoSum(new int[] {2,7,11,15}, 9);
+        int[] expected = new TwoSum().twoSum(new int[] {2, 7, 11, 15}, 9);
         Assert.assertArrayEquals(result, expected);
     }
 

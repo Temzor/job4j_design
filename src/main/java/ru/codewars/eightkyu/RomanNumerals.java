@@ -25,6 +25,7 @@ public class RomanNumerals {
         return s;
     }
 
+    @SuppressWarnings("checkstyle:InnerAssignment")
     public static int fromRoman(String s) {
         String[] r = {"IV", "IX", "XL", "XC", "CD", "CM"};
         for (String i : r) {
