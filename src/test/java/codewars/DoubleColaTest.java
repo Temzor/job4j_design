@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.DoubleCola;
+import ru.codewars.eightkyu.DoubleCola;
 import org.junit.Assert;
 import org.junit.Test;
 

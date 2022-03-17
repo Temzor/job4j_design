@@ -1,13 +1,12 @@
 package codewars;
 
-import codewars.Solution;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Solution;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SolutionTest {
     private static void test(double expected, double[] arrVal, String[] arrUnit) {
-        assertEquals(expected, Solution.solution(arrVal, arrUnit), expected * 1e-5);
+        Assert.assertEquals(expected, Solution.solution(arrVal, arrUnit), expected * 1e-5);
     }
 
     @Test

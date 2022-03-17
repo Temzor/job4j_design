@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.FirstClass;
+import org.junit.Assert;
+import ru.codewars.eightkyu.FirstClass;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class FirstClassTest {
     @Test
     public void testSum() {
         byte a = 1;
         byte b = 2;
-        assertEquals(3, FirstClass.sum(a, b));
+        Assert.assertEquals(3, FirstClass.sum(a, b));
     }
 
 }

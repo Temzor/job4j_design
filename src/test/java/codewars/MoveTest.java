@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.Move;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Move;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MoveTest {
     @Test
     public void basicTests() {
-        assertEquals(8, Move.move(0, 4));
-        assertEquals(15, Move.move(3, 6));
-        assertEquals(12, Move.move(2, 5));
+        Assert.assertEquals(8, Move.move(0, 4));
+        Assert.assertEquals(15, Move.move(3, 6));
+        Assert.assertEquals(12, Move.move(2, 5));
     }
 
 }

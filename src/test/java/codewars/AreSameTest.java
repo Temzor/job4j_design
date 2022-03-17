@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.AreSame;
+import ru.codewars.eightkyu.AreSame;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

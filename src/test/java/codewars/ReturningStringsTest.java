@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.ReturningStrings;
+import org.junit.Assert;
+import ru.codewars.eightkyu.ReturningStrings;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ReturningStringsTest {
     @Test
     public void testSomething() {
-        assertEquals("Hello, Ryan how are you doing today?", ReturningStrings.greet("Ryan"));
+        Assert.assertEquals("Hello, Ryan how are you doing today?", ReturningStrings.greet("Ryan"));
     }
 
 }

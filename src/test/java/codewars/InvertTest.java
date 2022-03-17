@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Invert;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Invert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,19 +14,19 @@ public class InvertTest {
 
         int[] input = new int[] {-1, -2, -3, -4, -5};
         int[] expected = new int[] {1, 2, 3, 4, 5};
-        assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
+        Assert.assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
 
         input = new int[] {-1, 2, -3, 4, -5};
         expected = new int[] {1, -2, 3, -4, 5};
-        assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
+        Assert.assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
 
         input = new int[] {};
         expected = new int[] {};
-        assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
+        Assert.assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
 
         input = new int[] {0};
         expected = new int[] {0};
-        assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
+        Assert.assertEquals(Arrays.toString(expected), Arrays.toString(Invert.invert(input)));
     }
 
 }

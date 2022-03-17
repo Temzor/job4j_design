@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Number;
+import ru.codewars.eightkyu.Number;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

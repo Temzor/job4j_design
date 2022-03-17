@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.MenFromBoys;
+import org.junit.Assert;
+import ru.codewars.eightkyu.MenFromBoys;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -34,7 +35,7 @@ public class MenFromBoysTest {
     }
     void doTest(final int[] values, final int[] expected) {
         int[] actual = MenFromBoys.menFromBoys(values);
-        assertArrayEquals(String.format("Expected %s\nReceived %s\n",
+        Assert.assertArrayEquals(String.format("Expected %s\nReceived %s\n",
                 Arrays.toString(expected),
                 Arrays.toString(actual)),
                 expected, actual);

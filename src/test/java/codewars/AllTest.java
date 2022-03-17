@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.All;
+import ru.codewars.eightkyu.All;
 import org.junit.Test;
 
 import java.util.function.IntPredicate;

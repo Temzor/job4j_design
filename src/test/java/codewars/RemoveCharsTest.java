@@ -1,28 +1,27 @@
 package codewars;
 
-import codewars.RemoveChars;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RemoveChars;
 import org.junit.Test;
 
 import java.security.SecureRandom;
 import java.util.Random;
 
-import static org.junit.Assert.*;
-
 public class RemoveCharsTest {
 
     @Test
     public void testRemoval() {
-        assertEquals("loquen", RemoveChars.remove("eloquent"));
-        assertEquals("ountr", RemoveChars.remove("country"));
-        assertEquals("erso", RemoveChars.remove("person"));
-        assertEquals("lac", RemoveChars.remove("place"));
+        Assert.assertEquals("loquen", RemoveChars.remove("eloquent"));
+        Assert.assertEquals("ountr", RemoveChars.remove("country"));
+        Assert.assertEquals("erso", RemoveChars.remove("person"));
+        Assert.assertEquals("lac", RemoveChars.remove("place"));
     }
 
     @Test
     public void testRemovalWithRandomString() {
         for (int i = 0; i < 6; i++) {
             String randStr = randomString(RANDOM.nextInt(21) + 10);
-            assertEquals(removeChars(randStr), RemoveChars.remove(randStr));
+            Assert.assertEquals(removeChars(randStr), RemoveChars.remove(randStr));
         }
     }
 

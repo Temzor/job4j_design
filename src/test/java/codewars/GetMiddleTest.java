@@ -1,21 +1,20 @@
 package codewars;
 
-import codewars.GetMiddle;
+import org.junit.Assert;
+import ru.codewars.eightkyu.GetMiddle;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class GetMiddleTest {
     @Test
     public void evenTests() {
-        assertEquals("es", GetMiddle.getMiddle("test"));
-        assertEquals("dd", GetMiddle.getMiddle("middle"));
+        Assert.assertEquals("es", GetMiddle.getMiddle("test"));
+        Assert.assertEquals("dd", GetMiddle.getMiddle("middle"));
     }
 
     @Test
     public void oddTests() {
-        assertEquals("t", GetMiddle.getMiddle("testing"));
-        assertEquals("A", GetMiddle.getMiddle("A"));
+        Assert.assertEquals("t", GetMiddle.getMiddle("testing"));
+        Assert.assertEquals("A", GetMiddle.getMiddle("A"));
     }
 
 }

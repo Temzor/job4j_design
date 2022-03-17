@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.TrafficLights;
+import org.junit.Assert;
+import ru.codewars.eightkyu.TrafficLights;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TrafficLightsTest {
     @Test
     public void updatelight() {
-        assertEquals("green", TrafficLights.updateLight("red"));
-        assertEquals("yellow", TrafficLights.updateLight("green"));
-        assertEquals("red", TrafficLights.updateLight("yellow"));
+        Assert.assertEquals("green", TrafficLights.updateLight("red"));
+        Assert.assertEquals("yellow", TrafficLights.updateLight("green"));
+        Assert.assertEquals("red", TrafficLights.updateLight("yellow"));
     }
 
 }

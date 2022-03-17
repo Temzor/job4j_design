@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.RowSumOddNumbers;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RowSumOddNumbers;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RowSumOddNumbersTest {
     @Test
     public void test1() {
-        assertEquals(1, RowSumOddNumbers.rowSumOddNumbers(1));
-        assertEquals(74088, RowSumOddNumbers.rowSumOddNumbers(42));
+        Assert.assertEquals(1, RowSumOddNumbers.rowSumOddNumbers(1));
+        Assert.assertEquals(74088, RowSumOddNumbers.rowSumOddNumbers(42));
     }
 
 }

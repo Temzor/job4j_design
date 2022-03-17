@@ -1,17 +1,16 @@
 package codewars;
 
-import codewars.AlphabetWar;
+import org.junit.Assert;
+import ru.codewars.eightkyu.AlphabetWar;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AlphabetWarTest {
     @Test
     public void basicTest() {
-        assertEquals("Right side wins!", AlphabetWar.alphabetWar("z"));
-        assertEquals("Let's fight again!", AlphabetWar.alphabetWar("zdqmwpbs"));
-        assertEquals("Right side wins!", AlphabetWar.alphabetWar("zzzzs"));
-        assertEquals("Left side wins!", AlphabetWar.alphabetWar("wwwwwwz"));
+        Assert.assertEquals("Right side wins!", AlphabetWar.alphabetWar("z"));
+        Assert.assertEquals("Let's fight again!", AlphabetWar.alphabetWar("zdqmwpbs"));
+        Assert.assertEquals("Right side wins!", AlphabetWar.alphabetWar("zzzzs"));
+        Assert.assertEquals("Left side wins!", AlphabetWar.alphabetWar("wwwwwwz"));
     }
 
 }

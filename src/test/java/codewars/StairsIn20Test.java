@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.StairsIn20;
+import org.junit.Assert;
+import ru.codewars.eightkyu.StairsIn20;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class StairsIn20Test {
     @Test
@@ -44,7 +43,7 @@ public class StairsIn20Test {
                 7150, 6567, 8524, 7613, 7809, 5562, 7799, 7179, 5184, 7960, 9455, 5633, 9085};
         int[][] stairs = {sunday, monday, tuesday, wednesday, thursday, friday, saturday};
         long expectedResult = 54636040;
-        assertEquals(expectedResult, StairsIn20.stairsIn20(stairs));
+        Assert.assertEquals(expectedResult, StairsIn20.stairsIn20(stairs));
     }
 
 }

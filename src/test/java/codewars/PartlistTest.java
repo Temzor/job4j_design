@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Partlist;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Partlist;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class PartlistTest {
     private static void testing(String actual, String expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

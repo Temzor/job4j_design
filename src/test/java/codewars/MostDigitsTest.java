@@ -1,39 +1,38 @@
 package codewars;
 
-import codewars.MostDigits;
+import org.junit.Assert;
+import ru.codewars.eightkyu.MostDigits;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MostDigitsTest {
     @Test
     public void exampleTest1() {
-        assertEquals(100, MostDigits.findLongest(new int[] {1, 10, 100}));
+        Assert.assertEquals(100, MostDigits.findLongest(new int[] {1, 10, 100}));
     }
 
     @Test
     public void exampleTest2() {
-        assertEquals(9000, MostDigits.findLongest(new int[] {9000, 8, 800}));
+        Assert.assertEquals(9000, MostDigits.findLongest(new int[] {9000, 8, 800}));
     }
 
     @Test
     public void exampleTest3() {
-        assertEquals(900, MostDigits.findLongest(new int[]  {8, 900, 500}));
+        Assert.assertEquals(900, MostDigits.findLongest(new int[]  {8, 900, 500}));
     }
 
     @Test
     public void exampleTest4() {
-        assertEquals(40000, MostDigits.findLongest(new int[] {3, 40000, 100}));
+        Assert.assertEquals(40000, MostDigits.findLongest(new int[] {3, 40000, 100}));
     }
 
     @Test
     public void exampleTest5() {
-        assertEquals(100000, MostDigits.findLongest(new int[] {1, 200, 100000}));
+        Assert.assertEquals(100000, MostDigits.findLongest(new int[] {1, 200, 100000}));
     }
 
     @Test
     public void exampleTest6() {
-        assertEquals(-10, MostDigits.findLongest(new int[] {-10, 1, 0, 1, 10}));
+        Assert.assertEquals(-10, MostDigits.findLongest(new int[] {-10, 1, 0, 1, 10}));
     }
 
 }

@@ -1,8 +1,9 @@
 package codewars;
 
+import org.junit.Assert;
+import ru.codewars.eightkyu.Primes;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
 
 public class PrimesTest {
     @Test
@@ -27,7 +28,7 @@ public class PrimesTest {
 
     private void test(int skip, int... expect) {
         int[] found = Primes.stream().skip(skip).limit(10).toArray();
-        assertArrayEquals(expect, found);
+        Assert.assertArrayEquals(expect, found);
     }
 
 }

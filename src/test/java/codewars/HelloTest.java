@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.Hello;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Hello;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class HelloTest {
     @Test
     public void test1() throws Exception {
         Hello h = new Hello();
         String[] name = {"John", "Smith"};
-        assertEquals("Hello, John Smith! Welcome to Phoenix, Arizona!",
+        Assert.assertEquals("Hello, John Smith! Welcome to Phoenix, Arizona!",
                 h.sayHello(name, "Phoenix", "Arizona"));
     }
 

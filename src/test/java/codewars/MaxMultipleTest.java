@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.MaxMultiple;
+import org.junit.Assert;
+import ru.codewars.eightkyu.MaxMultiple;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MaxMultipleTest {
     private void test(String message, int expected, int actual) {
-        assertEquals(message, expected, actual);
+        Assert.assertEquals(message, expected, actual);
     }
 
     @Test

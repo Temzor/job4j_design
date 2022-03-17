@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.CheckForFactor;
+import ru.codewars.eightkyu.CheckForFactor;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

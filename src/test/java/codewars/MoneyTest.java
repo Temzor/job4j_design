@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Money;
+import ru.codewars.eightkyu.Money;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.IsDivisible2;
+import ru.codewars.eightkyu.IsDivisible2;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

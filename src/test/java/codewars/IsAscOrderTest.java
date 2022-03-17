@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.IsAscOrder;
+import ru.codewars.eightkyu.IsAscOrder;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

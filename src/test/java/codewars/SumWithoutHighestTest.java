@@ -1,56 +1,55 @@
 package codewars;
 
-import codewars.SumWithoutHighest;
+import org.junit.Assert;
+import ru.codewars.eightkyu.SumWithoutHighest;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
-
 public class SumWithoutHighestTest {
     @Test
     public void basicTests() {
-        assertEquals(16, SumWithoutHighest.sum(new int[] {6, 2, 1, 8, 10}));
+        Assert.assertEquals(16, SumWithoutHighest.sum(new int[] {6, 2, 1, 8, 10}));
     }
 
     @Test
     public void sumOnlyOneElement() {
-        assertEquals(0, SumWithoutHighest.sum(new int[] {6}));
+        Assert.assertEquals(0, SumWithoutHighest.sum(new int[] {6}));
     }
 
     @Test
     public void sumOnlyTwoElements() {
-        assertEquals(0, SumWithoutHighest.sum(new int[] {6, 7}));
+        Assert.assertEquals(0, SumWithoutHighest.sum(new int[] {6, 7}));
     }
 
     @Test
     public void sumPositives() {
-        assertEquals(16, SumWithoutHighest.sum(new int[] {6, 2, 1, 8, 10}));
+        Assert.assertEquals(16, SumWithoutHighest.sum(new int[] {6, 2, 1, 8, 10}));
     }
 
     @Test
     public void sumPositivesWithDoubleMax() {
-        assertEquals(17, SumWithoutHighest.sum(new int[] {6, 0, 1, 10, 10}));
+        Assert.assertEquals(17, SumWithoutHighest.sum(new int[] {6, 0, 1, 10, 10}));
     }
 
     @Test
     public void sumNegatives() {
-        assertEquals(-28, SumWithoutHighest.sum(new int[] {-6, -20, -1, -10, -12}));
+        Assert.assertEquals(-28, SumWithoutHighest.sum(new int[] {-6, -20, -1, -10, -12}));
     }
 
     @Test
     public void sumMixed() {
-        assertEquals(3, SumWithoutHighest.sum(new int[] {-6, 20, -1, 10, -12}));
+        Assert.assertEquals(3, SumWithoutHighest.sum(new int[] {-6, 20, -1, 10, -12}));
     }
 
     @Test
     public void sumEmptyArray() {
-        assertEquals(0, SumWithoutHighest.sum(new int[0]));
+        Assert.assertEquals(0, SumWithoutHighest.sum(new int[0]));
     }
 
     @Test
     public void sumNullArray() {
-        assertEquals(0, SumWithoutHighest.sum(null));
+        Assert.assertEquals(0, SumWithoutHighest.sum(null));
     }
 
     @Test
@@ -70,7 +69,7 @@ public class SumWithoutHighestTest {
 
             int expected = sum - min - max;
 
-            assertEquals(expected, SumWithoutHighest.sum(numbers));
+            Assert.assertEquals(expected, SumWithoutHighest.sum(numbers));
         }
     }
 

@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.SpinWords;
+import org.junit.Assert;
+import ru.codewars.eightkyu.SpinWords;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SpinWordsTest {
     @Test
     public void test() {
-        assertEquals("emocleW", new SpinWords().spinWords("Welcome"));
-        assertEquals("Hey wollef sroirraw", new SpinWords().spinWords("Hey fellow warriors"));
+        Assert.assertEquals("emocleW", new SpinWords().spinWords("Welcome"));
+        Assert.assertEquals("Hey wollef sroirraw", new SpinWords().spinWords("Hey fellow warriors"));
     }
 }

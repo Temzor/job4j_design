@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Rotations;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Rotations;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class RotationsTest {
     private static void testing(Boolean actual, Boolean expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Feast;
+import ru.codewars.eightkyu.Feast;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

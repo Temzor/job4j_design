@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.MakeNegative;
+import org.testng.Assert;
+import ru.codewars.eightkyu.MakeNegative;
 import org.junit.Test;
 
 import java.util.Random;
@@ -17,34 +18,34 @@ public class MakeNegativeTest {
 
     @Test
     public void test1() {
-        assertEquals(-42, MakeNegative.makeNegative(42));
+        Assert.assertEquals(-42, MakeNegative.makeNegative(42));
     }
 
     @Test
     public void test2() {
-        assertEquals(-9, MakeNegative.makeNegative(-9));
+        Assert.assertEquals(-9, MakeNegative.makeNegative(-9));
     }
 
     @Test
     public void test3() {
-        assertEquals(0, MakeNegative.makeNegative(0));
+        Assert.assertEquals(0, MakeNegative.makeNegative(0));
     }
 
     @Test
     public void test4() {
-        assertEquals(-1, MakeNegative.makeNegative(1));
+        Assert.assertEquals(-1, MakeNegative.makeNegative(1));
     }
 
     @Test
     public void test5() {
-        assertEquals(-1, MakeNegative.makeNegative(-1));
+        Assert.assertEquals(-1, MakeNegative.makeNegative(-1));
     }
 
     @Test
     public void testRandomPositives() {
         for (int i = 0; i < NUM_RANDOM_TESTS; i++) {
             int x = random.nextInt(MAX_X - 1) + 1;
-            assertEquals(-abs(x), MakeNegative.makeNegative(x));
+            Assert.assertEquals(-abs(x), MakeNegative.makeNegative(x));
         }
     }
 
@@ -52,7 +53,7 @@ public class MakeNegativeTest {
     public void testRandomNegatives() {
         for (int i = 0; i < NUM_RANDOM_TESTS; i++) {
             int x = -random.nextInt(MAX_X);
-            assertEquals(-abs(x), MakeNegative.makeNegative(x));
+            Assert.assertEquals(-abs(x), MakeNegative.makeNegative(x));
         }
     }
 }

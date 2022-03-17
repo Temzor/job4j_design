@@ -1,18 +1,17 @@
 package codewars;
 
-import codewars.AbbreviateTwoWords;
+import org.junit.Assert;
+import ru.codewars.eightkyu.AbbreviateTwoWords;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AbbreviateTwoWordsTest {
     @Test
     public void testFixed() {
-        assertEquals("S.H", AbbreviateTwoWords.abbrevName("Sam Harris"));
-        assertEquals("P.F", AbbreviateTwoWords.abbrevName("Patrick Feenan"));
-        assertEquals("E.C", AbbreviateTwoWords.abbrevName("Evan Cole"));
-        assertEquals("P.F", AbbreviateTwoWords.abbrevName("P Favuzzi"));
-        assertEquals("D.M", AbbreviateTwoWords.abbrevName("David Mendieta"));
+        Assert.assertEquals("S.H", AbbreviateTwoWords.abbrevName("Sam Harris"));
+        Assert.assertEquals("P.F", AbbreviateTwoWords.abbrevName("Patrick Feenan"));
+        Assert.assertEquals("E.C", AbbreviateTwoWords.abbrevName("Evan Cole"));
+        Assert.assertEquals("P.F", AbbreviateTwoWords.abbrevName("P Favuzzi"));
+        Assert.assertEquals("D.M", AbbreviateTwoWords.abbrevName("David Mendieta"));
     }
 
 }

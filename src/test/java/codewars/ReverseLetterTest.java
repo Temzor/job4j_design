@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.ReverseLetter;
+import org.testng.Assert;
+import ru.codewars.eightkyu.ReverseLetter;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ReverseLetterTest {
     @Test
@@ -14,6 +13,6 @@ public class ReverseLetterTest {
         doTest("krish21an", "nahsirk");
     }
     private void doTest(final String str, final String expected) {
-        assertEquals(expected, ReverseLetter.reverseLetter(str));
+        Assert.assertEquals(expected, ReverseLetter.reverseLetter(str));
     }
 }

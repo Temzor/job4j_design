@@ -1,8 +1,8 @@
 package codewars;
 
-import codewars.SimpleFun;
+import org.junit.Assert;
+import ru.codewars.eightkyu.SimpleFun;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class SimpleFunTest {
     @Test
@@ -11,7 +11,7 @@ public class SimpleFunTest {
         doTest(10,  9,   4,  1);
     }
     private void doTest(int upSpeed, int downSpeed, int desiredHeight, int expected) {
-        assertEquals(expected, SimpleFun.growingPlant(upSpeed, downSpeed, desiredHeight));
+        Assert.assertEquals(expected, SimpleFun.growingPlant(upSpeed, downSpeed, desiredHeight));
     }
 
 }

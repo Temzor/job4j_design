@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Plural;
+import ru.codewars.eightkyu.Plural;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.MyUtilities;
+import ru.codewars.eightkyu.MyUtilities;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

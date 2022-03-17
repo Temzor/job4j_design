@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Ghost;
+import ru.codewars.eightkyu.Ghost;
 import org.junit.Test;
 
 public class GhostTest {

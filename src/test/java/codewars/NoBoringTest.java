@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.NoBoring;
+import org.junit.Assert;
+import ru.codewars.eightkyu.NoBoring;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class NoBoringTest {
     private static void testing(int actual, int expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test1() {

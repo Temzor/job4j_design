@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.RemoveExclamationMarks;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RemoveExclamationMarks;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RemoveExclamationMarksTest {
     @Test
     public void testSimpleString1() {
-        assertEquals("Hello World", RemoveExclamationMarks.removeExclamationMarks("Hello World!"));
+        Assert.assertEquals("Hello World", RemoveExclamationMarks.removeExclamationMarks("Hello World!"));
     }
 
 }

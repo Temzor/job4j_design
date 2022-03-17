@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.XO;
+import ru.codewars.eightkyu.XO;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

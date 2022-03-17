@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.ReversedStrings;
+import org.testng.Assert;
+import ru.codewars.sevenkyu.ReversedStrings;
 import org.junit.Test;
 
 import java.util.Random;
@@ -16,11 +17,11 @@ public class ReversedStringsTest {
 
     @Test
     public void sampleTests() {
-        assertEquals("dlrow", ReversedStrings.solution("world"));
-        assertEquals("olleh", ReversedStrings.solution("hello"));
-        assertEquals("", ReversedStrings.solution(""));
-        assertEquals("h", ReversedStrings.solution("h"));
-        assertEquals("selur srawedoC", ReversedStrings.solution("Codewars rules"));
+        Assert.assertEquals("dlrow", ReversedStrings.solution("world"));
+        Assert.assertEquals("olleh", ReversedStrings.solution("hello"));
+        Assert.assertEquals("", ReversedStrings.solution(""));
+        Assert.assertEquals("h", ReversedStrings.solution("h"));
+        Assert.assertEquals("selur srawedoC", ReversedStrings.solution("Codewars rules"));
     }
 
     @Test
@@ -36,7 +37,7 @@ public class ReversedStringsTest {
             String expected = solution(test);
             String actual = ReversedStrings.solution(test);
 
-            assertEquals(expected, actual);
+            Assert.assertEquals(expected, actual);
         }
     }
 }

@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.Swapper;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Swapper;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SwapperTest {
     @Test
@@ -12,8 +11,8 @@ public class SwapperTest {
 
         Swapper r = new Swapper(args);
         r.swapValues();
-        assertEquals("Failed swapping numbers", 2, r.arguments[0]);
-        assertEquals("Failed swapping numbers", 1, r.arguments[1]);
+        Assert.assertEquals("Failed swapping numbers", 2, r.arguments[0]);
+        Assert.assertEquals("Failed swapping numbers", 1, r.arguments[1]);
     }
 
 }

@@ -1,11 +1,10 @@
 package codewars;
 
-import codewars.Factorial;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Factorial;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class FactorialTest {
     private Factorial fact;
@@ -22,17 +21,17 @@ public class FactorialTest {
 
     @Test
     public void testFactorial0() {
-        assertEquals(1, fact.factorial(0));
+        Assert.assertEquals(1, fact.factorial(0));
     }
 
     @Test
     public void testFactorial3() {
-        assertEquals(6, fact.factorial(3));
+        Assert.assertEquals(6, fact.factorial(3));
     }
 
     @Test
     public void testFactorial5() {
-        assertEquals(120, fact.factorial(5));
+        Assert.assertEquals(120, fact.factorial(5));
     }
 
 }

@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.SquareDigit;
+import org.junit.Assert;
+import ru.codewars.eightkyu.SquareDigit;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SquareDigitTest {
     @Test
     public void test() {
-        assertEquals(811181, new SquareDigit().squareDigits(9119));
-        assertEquals(0, new SquareDigit().squareDigits(0));
+        Assert.assertEquals(811181, new SquareDigit().squareDigits(9119));
+        Assert.assertEquals(0, new SquareDigit().squareDigits(0));
     }
 
 }

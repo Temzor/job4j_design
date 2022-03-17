@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.Well;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Well;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class WellTest {
     @Test
     public void basicTests() {
-        assertEquals("Fail!", Well.well(new String[] {"bad", "bad", "bad"}));
-        assertEquals("Publish!", Well.well(new String[] {"good", "bad", "bad", "bad", "bad"}));
-        assertEquals("I smell a series!", Well.well(new String[] {
+        Assert.assertEquals("Fail!", Well.well(new String[] {"bad", "bad", "bad"}));
+        Assert.assertEquals("Publish!", Well.well(new String[] {"good", "bad", "bad", "bad", "bad"}));
+        Assert.assertEquals("I smell a series!", Well.well(new String[] {
                 "good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"}));
     }
 

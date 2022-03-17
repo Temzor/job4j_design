@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Positive;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Positive;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,11 +14,11 @@ public class PositiveTest {
 
         @Test
         public void testSomething() {
-            assertEquals(15, Positive.sum(new int[]{1, 2, 3, 4, 5}));
-            assertEquals(13, Positive.sum(new int[]{1, -2, 3, 4, 5}));
-            assertEquals(0, Positive.sum(new int[]{}));
-            assertEquals(0, Positive.sum(new int[]{-1, -2, -3, -4, -5}));
-            assertEquals(9, Positive.sum(new int[]{-1, 2, 3, 4, -5}));
+            Assert.assertEquals(15, Positive.sum(new int[]{1, 2, 3, 4, 5}));
+            Assert.assertEquals(13, Positive.sum(new int[]{1, -2, 3, 4, 5}));
+            Assert.assertEquals(0, Positive.sum(new int[]{}));
+            Assert.assertEquals(0, Positive.sum(new int[]{-1, -2, -3, -4, -5}));
+            Assert.assertEquals(9, Positive.sum(new int[]{-1, 2, 3, 4, -5}));
         }
 
         private int random(int min, int max) {
@@ -41,7 +42,7 @@ public class PositiveTest {
         public void randomArrayTest() {
             for (int i = 0; i < 100; i++) {
                 int[] arr = randomArray();
-                assertEquals(sum(arr), Positive.sum(arr));
+                Assert.assertEquals(sum(arr), Positive.sum(arr));
             }
         }
     }

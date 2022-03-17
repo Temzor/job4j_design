@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.MakeUpperCase;
+import org.junit.Assert;
+import ru.codewars.eightkyu.MakeUpperCase;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MakeUpperCaseTest {
     @Test
     public void testSomething() {
-        assertEquals("HELLO", MakeUpperCase.makeUpperCase("hello"));
+        Assert.assertEquals("HELLO", MakeUpperCase.makeUpperCase("hello"));
     }
 
 }

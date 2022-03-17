@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.RepeatIt;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RepeatIt;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RepeatItTest {
     @Test
@@ -18,7 +17,7 @@ public class RepeatItTest {
 
     public void repeatTest(final Object toRepeat, final int n, final String expected) {
         final String testMessage = String.format("Testing with toRepeat = %s and n = %d", toRepeat, n);
-        assertEquals(testMessage,  expected, RepeatIt.repeatString(toRepeat, n));
+        Assert.assertEquals(testMessage,  expected, RepeatIt.repeatString(toRepeat, n));
     }
 
 }

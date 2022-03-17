@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.ZeroFuel;
+import ru.codewars.eightkyu.ZeroFuel;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

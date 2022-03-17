@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.Counter;
+import org.testng.Assert;
+import ru.codewars.eightkyu.Counter;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CounterTest {
     Boolean[] array1 = {true,  true,  true,  false,
@@ -15,6 +14,6 @@ public class CounterTest {
 
     @Test
     public void test() {
-        assertEquals("There are 17 sheeps in total", 17, new Counter().countSheeps(array1));
+        Assert.assertEquals("There are 17 sheeps in total", 17, String.valueOf(new Counter().countSheeps(array1)));
     }
 }

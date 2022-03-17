@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Isogram;
+import ru.codewars.eightkyu.Isogram;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

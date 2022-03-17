@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Divide;
+import ru.codewars.eightkyu.Divide;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

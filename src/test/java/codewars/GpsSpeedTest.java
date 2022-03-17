@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.GpsSpeed;
+import org.junit.Assert;
+import ru.codewars.eightkyu.GpsSpeed;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class GpsSpeedTest {
     private static void testing(long actual, long expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

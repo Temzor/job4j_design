@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.Ball;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Ball;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BallTest {
     private static void testing(int actual, int expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test() {

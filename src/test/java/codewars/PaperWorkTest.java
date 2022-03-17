@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.PaperWork;
+import org.junit.Assert;
+import ru.codewars.eightkyu.PaperWork;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PaperWorkTest {
     @Test
     public void test1() {
-        assertEquals("Failed at paperWork(5,5)", 25, PaperWork.paperWork(5, 5));
+        Assert.assertEquals("Failed at paperWork(5,5)", 25, PaperWork.paperWork(5, 5));
     }
 
 }

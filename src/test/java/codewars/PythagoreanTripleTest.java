@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.PythagoreanTriple;
+import org.junit.Assert;
+import ru.codewars.eightkyu.PythagoreanTriple;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PythagoreanTripleTest {
     static int[] p1 = {3, 4, 5};
@@ -13,12 +12,12 @@ public class PythagoreanTripleTest {
 
     @Test
     public void validTriple() {
-        assertEquals(1, pT.pythagoreanTriple(p1));
+        Assert.assertEquals(1, pT.pythagoreanTriple(p1));
     }
 
     @Test
     public void invalidTriple() {
-        assertEquals(0, pT.pythagoreanTriple(p2));
+        Assert.assertEquals(0, pT.pythagoreanTriple(p2));
     }
 
 }

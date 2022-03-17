@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.SaleHotdogs;
+import ru.codewars.eightkyu.SaleHotdogs;
 import org.junit.Assert;
 import org.junit.Test;
 

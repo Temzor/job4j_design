@@ -1,24 +1,23 @@
 package codewars;
 
-import codewars.StringRepeat;
+import org.junit.Assert;
+import ru.codewars.eightkyu.StringRepeat;
 import org.junit.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.*;
-
 public class StringRepeatTest {
     @Test public void test4a() {
-        assertEquals("aaaa", StringRepeat.repeatStr(4, "a"));
+        Assert.assertEquals("aaaa", StringRepeat.repeatStr(4, "a"));
     }
     @Test public void test3Hello() {
-        assertEquals("HelloHelloHello", StringRepeat.repeatStr(3, "Hello"));
+        Assert.assertEquals("HelloHelloHello", StringRepeat.repeatStr(3, "Hello"));
     }
     @Test public void test5empty() {
-        assertEquals("", StringRepeat.repeatStr(5, ""));
+        Assert.assertEquals("", StringRepeat.repeatStr(5, ""));
     }
     @Test public void test0a() {
-        assertEquals("", StringRepeat.repeatStr(0, "kata"));
+        Assert.assertEquals("", StringRepeat.repeatStr(0, "kata"));
     }
 
     private final char[] characters =
@@ -38,21 +37,21 @@ public class StringRepeatTest {
             final int timesToRepeat = rand.nextInt(32);
             final String expected = String.valueOf(text).repeat(timesToRepeat);
 
-            assertEquals(expected, StringRepeat.repeatStr(timesToRepeat, string));
+            Assert.assertEquals(expected, StringRepeat.repeatStr(timesToRepeat, string));
         }
     }
 
     @Test public void test4a1() {
-        assertEquals("aaaa", StringRepeat.repeatStr1(4, "a"));
+        Assert.assertEquals("aaaa", StringRepeat.repeatStr1(4, "a"));
     }
     @Test public void test3Hello1() {
-        assertEquals("HelloHelloHello", StringRepeat.repeatStr1(3, "Hello"));
+        Assert.assertEquals("HelloHelloHello", StringRepeat.repeatStr1(3, "Hello"));
     }
     @Test public void test5empty1() {
-        assertEquals("", StringRepeat.repeatStr1(5, ""));
+        Assert.assertEquals("", StringRepeat.repeatStr1(5, ""));
     }
     @Test public void test0a1() {
-        assertEquals("", StringRepeat.repeatStr1(0, "kata"));
+        Assert.assertEquals("", StringRepeat.repeatStr1(0, "kata"));
     }
 
     private final char[] characters1 =
@@ -72,7 +71,7 @@ public class StringRepeatTest {
             final int timesToRepeat = rand.nextInt(32);
             final String expected = String.valueOf(text).repeat(timesToRepeat);
 
-            assertEquals(expected, StringRepeat.repeatStr1(timesToRepeat, string));
+            Assert.assertEquals(expected, StringRepeat.repeatStr1(timesToRepeat, string));
         }
     }
 }

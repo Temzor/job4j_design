@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Metro;
+import org.testng.Assert;
+import ru.codewars.eightkyu.Metro;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -15,6 +16,6 @@ public class MetroTest {
         list.add(new int[] {10, 0});
         list.add(new int[] {3, 5});
         list.add(new int[] {2, 5});
-        assertEquals(5, Metro.countPassengers(list));
+        Assert.assertEquals(5, Metro.countPassengers(list));
     }
 }

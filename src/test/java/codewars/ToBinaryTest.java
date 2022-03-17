@@ -1,17 +1,16 @@
 package codewars;
 
-import codewars.ToBinary;
+import org.junit.Assert;
+import ru.codewars.eightkyu.ToBinary;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ToBinaryTest {
     @Test
     public void testToBinary() {
-        assertEquals(1, ToBinary.toBinary(1));
-        assertEquals(10, ToBinary.toBinary(2));
-        assertEquals(11, ToBinary.toBinary(3));
-        assertEquals(101, ToBinary.toBinary(5));
+        Assert.assertEquals(1, ToBinary.toBinary(1));
+        Assert.assertEquals(10, ToBinary.toBinary(2));
+        Assert.assertEquals(11, ToBinary.toBinary(3));
+        Assert.assertEquals(101, ToBinary.toBinary(5));
     }
 
 }

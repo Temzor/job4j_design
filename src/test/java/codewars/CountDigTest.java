@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.CountDig;
+import org.junit.Assert;
+import ru.codewars.eightkyu.CountDig;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CountDigTest {
     private static void testing(int actual, int expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test() {

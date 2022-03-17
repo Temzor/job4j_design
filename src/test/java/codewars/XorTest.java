@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.Xor;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Xor;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class XorTest {
     private static void testing(boolean actual, boolean expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

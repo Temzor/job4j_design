@@ -1,13 +1,12 @@
 package codewars;
 
-import codewars.HelloWorld;
+import org.junit.Assert;
+import ru.codewars.eightkyu.HelloWorld;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class HelloWorldTest {
     @Test
     public void testHelloWorld() {
-        assertEquals("hello world!", HelloWorld.greet());
+        Assert.assertEquals("hello world!", HelloWorld.greet());
     }
 }

@@ -1,18 +1,17 @@
 package codewars;
 
-import codewars.BitCounting;
+import org.junit.Assert;
+import ru.codewars.eightkyu.BitCounting;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class BitCountingTest {
     @Test
     public void testGame() {
-        assertEquals(5, BitCounting.countBits(1234));
-        assertEquals(1, BitCounting.countBits(4));
-        assertEquals(3, BitCounting.countBits(7));
-        assertEquals(2, BitCounting.countBits(9));
-        assertEquals(2, BitCounting.countBits(10));
+        Assert.assertEquals(5, BitCounting.countBits(1234));
+        Assert.assertEquals(1, BitCounting.countBits(4));
+        Assert.assertEquals(3, BitCounting.countBits(7));
+        Assert.assertEquals(2, BitCounting.countBits(9));
+        Assert.assertEquals(2, BitCounting.countBits(10));
     }
 
 }

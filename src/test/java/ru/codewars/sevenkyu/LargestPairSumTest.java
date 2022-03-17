@@ -2,6 +2,7 @@ package ru.codewars.sevenkyu;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.codewars.eightkyu.LargestPairSum;
 
 public class LargestPairSumTest {
     @Test

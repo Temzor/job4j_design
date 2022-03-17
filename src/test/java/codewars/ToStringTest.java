@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.ToString;
+import org.junit.Assert;
+import ru.codewars.eightkyu.ToString;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ToStringTest {
     @Test
     public void tests() {
-        assertEquals("Wrong!", ToString.A, "123");
+        Assert.assertEquals("Wrong!", ToString.A, "123");
     }
 
 }

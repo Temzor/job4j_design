@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.WilsonPrime;
+import ru.codewars.eightkyu.WilsonPrime;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

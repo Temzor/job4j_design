@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Arge;
+import ru.codewars.eightkyu.Arge;
 import org.junit.Assert;
 import org.junit.Test;
 

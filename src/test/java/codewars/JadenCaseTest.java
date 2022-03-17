@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.JadenCase;
+import org.junit.Assert;
+import ru.codewars.eightkyu.JadenCase;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,7 +11,7 @@ public class JadenCaseTest {
 
     @Test
     public void test() {
-        assertEquals("toJadenCase doesn't return a valide JadenCase String! try again please :)",
+        Assert.assertEquals("toJadenCase doesn't return a valide JadenCase String! try again please :)",
                 "Most Trees Are Blue", jadenCase.toJadenCase("most trees are blue"));
     }
 

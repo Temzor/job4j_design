@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.OppositesAttract;
+import ru.codewars.eightkyu.OppositesAttract;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

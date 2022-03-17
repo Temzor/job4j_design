@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.LongestConsec;
+import org.junit.Assert;
+import ru.codewars.eightkyu.LongestConsec;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class LongestConsecTest {
     private static void testing(String actual, String expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test() {

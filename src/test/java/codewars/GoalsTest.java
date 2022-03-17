@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.Goals;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Goals;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class GoalsTest {
     @Test
     public void basicTests() {
-        assertEquals(0, Goals.goals(0, 0, 0));
-        assertEquals(58, Goals.goals(43, 10, 5));
+        Assert.assertEquals(0, Goals.goals(0, 0, 0));
+        Assert.assertEquals(58, Goals.goals(43, 10, 5));
     }
 
 }

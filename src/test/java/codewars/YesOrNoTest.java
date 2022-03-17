@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.YesOrNo;
+import org.junit.Assert;
+import ru.codewars.eightkyu.YesOrNo;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class YesOrNoTest {
     @Test
     public void testBoolToWord() {
-        assertEquals(YesOrNo.boolToWord(true), "Yes");
-        assertEquals(YesOrNo.boolToWord(false), "No");
+        Assert.assertEquals(YesOrNo.boolToWord(true), "Yes");
+        Assert.assertEquals(YesOrNo.boolToWord(false), "No");
     }
 }

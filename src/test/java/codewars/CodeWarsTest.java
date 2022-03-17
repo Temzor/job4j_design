@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.CodeWars;
+import org.junit.Assert;
+import ru.codewars.eightkyu.CodeWars;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CodeWarsTest {
     @Test
     public void testSomething() {
-        assertEquals(1, CodeWars.strCount("o", 'o'));
-        assertEquals(2, CodeWars.strCount("Hello", 'l'));
-        assertEquals(0, CodeWars.strCount("", 'z'));
+        Assert.assertEquals(1, CodeWars.strCount("o", 'o'));
+        Assert.assertEquals(2, CodeWars.strCount("Hello", 'l'));
+        Assert.assertEquals(0, CodeWars.strCount("", 'z'));
     }
 
 }

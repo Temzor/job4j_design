@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.BetterThanAverage;
+import ru.codewars.eightkyu.BetterThanAverage;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

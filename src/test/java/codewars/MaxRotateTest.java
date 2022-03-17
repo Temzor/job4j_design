@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.MaxRotate;
+import org.junit.Assert;
+import ru.codewars.eightkyu.MaxRotate;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MaxRotateTest {
     private static void testing(long actual, long expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test() {

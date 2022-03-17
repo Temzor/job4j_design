@@ -1,9 +1,8 @@
 package codewars;
 
-import codewars.StrongNumber;
+import org.junit.Assert;
+import ru.codewars.eightkyu.StrongNumber;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class StrongNumberTest {
     final static String STRONG = "STRONG!!!!";
@@ -11,12 +10,12 @@ public class StrongNumberTest {
 
     @Test
     public void testSomething() {
-        assertEquals(STRONG, StrongNumber.isStrongNumber(1));
-        assertEquals(STRONG, StrongNumber.isStrongNumber(2));
-        assertEquals(STRONG, StrongNumber.isStrongNumber(145));
-        assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(7));
-        assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(93));
-        assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(185));
+        Assert.assertEquals(STRONG, StrongNumber.isStrongNumber(1));
+        Assert.assertEquals(STRONG, StrongNumber.isStrongNumber(2));
+        Assert.assertEquals(STRONG, StrongNumber.isStrongNumber(145));
+        Assert.assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(7));
+        Assert.assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(93));
+        Assert.assertEquals(NOT_STRONG, StrongNumber.isStrongNumber(185));
     }
 
 }

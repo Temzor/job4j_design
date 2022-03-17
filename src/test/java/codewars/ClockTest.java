@@ -1,13 +1,12 @@
 package codewars;
 
-import codewars.Clock;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Clock;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ClockTest {
     @Test
     public void test1() {
-        assertEquals(61000, Clock.past(0, 1, 1));
+        Assert.assertEquals(61000, Clock.past(0, 1, 1));
     }
 }

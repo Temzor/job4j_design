@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Nessie;
+import ru.codewars.eightkyu.Nessie;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

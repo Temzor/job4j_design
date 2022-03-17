@@ -1,19 +1,18 @@
 package codewars;
 
-import codewars.Triangle;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Triangle;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TriangleTest {
     @Test
     public void examples() {
-        assertEquals('R', Triangle.triangle("GB"));
-        assertEquals('R', Triangle.triangle("RRR"));
-        assertEquals('B', Triangle.triangle("RGBG"));
-        assertEquals('G', Triangle.triangle("RBRGBRB"));
-        assertEquals('G', Triangle.triangle("RBRGBRBGGRRRBGBBBGG"));
-        assertEquals('B', Triangle.triangle("B"));
+        Assert.assertEquals('R', Triangle.triangle("GB"));
+        Assert.assertEquals('R', Triangle.triangle("RRR"));
+        Assert.assertEquals('B', Triangle.triangle("RGBG"));
+        Assert.assertEquals('G', Triangle.triangle("RBRGBRB"));
+        Assert.assertEquals('G', Triangle.triangle("RBRGBRBGGRRRBGBBBGG"));
+        Assert.assertEquals('B', Triangle.triangle("B"));
     }
 
 }

@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.Banjo;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Banjo;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class BanjoTest {
     @Test
     public void peopleThatPlayBanjo() {
-        assertEquals("Nope!", "Martin does not play banjo", Banjo.areYouPlayingBanjo("Martin"));
-        assertEquals("Nope!", "Rikke plays banjo", Banjo.areYouPlayingBanjo("Rikke"));
+        Assert.assertEquals("Nope!", "Martin does not play banjo", Banjo.areYouPlayingBanjo("Martin"));
+        Assert.assertEquals("Nope!", "Rikke plays banjo", Banjo.areYouPlayingBanjo("Rikke"));
     }
 
 }

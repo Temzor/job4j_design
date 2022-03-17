@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Snail;
+import ru.codewars.eightkyu.Snail;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.Arrays;

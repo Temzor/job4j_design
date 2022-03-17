@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.Multiples;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Multiples;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class MultiplesTest {
     @Test
     public void test() {
-        assertEquals(23, new Multiples().solution(10));
+        Assert.assertEquals(23, new Multiples().solution(10));
     }
 
 }

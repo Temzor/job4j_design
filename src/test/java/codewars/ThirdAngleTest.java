@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.ThirdAngle;
+import org.junit.Assert;
+import ru.codewars.eightkyu.ThirdAngle;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ThirdAngleTest {
     @Test
     public void testOtherAngle() {
-        assertEquals(123, ThirdAngle.otherAngle(45, 12));
-        assertEquals(70, ThirdAngle.otherAngle(50, 60));
+        Assert.assertEquals(123, ThirdAngle.otherAngle(45, 12));
+        Assert.assertEquals(70, ThirdAngle.otherAngle(50, 60));
     }
 
 }

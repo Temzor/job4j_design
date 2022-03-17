@@ -8,8 +8,8 @@ import static org.junit.Assert.*;
 public class MultiTableTest {
     @Test
     public void basicTests() {
-        assertEquals(5, 5);
-        assertEquals(1, 1);
+        Assert.assertEquals(5, 5);
+        Assert.assertEquals(1, 1);
     }
 
 }

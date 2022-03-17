@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.CountingSheep;
+import org.junit.Assert;
+import ru.codewars.eightkyu.CountingSheep;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CountingSheepTest {
     @Test
     public void testSomething() {
-        assertEquals("1 sheep...", CountingSheep.countingSheep(1));
-        assertEquals("1 sheep...2 sheep...", CountingSheep.countingSheep(2));
-        assertEquals("1 sheep...2 sheep...3 sheep...", CountingSheep.countingSheep(3));
+        Assert.assertEquals("1 sheep...", CountingSheep.countingSheep(1));
+        Assert.assertEquals("1 sheep...2 sheep...", CountingSheep.countingSheep(2));
+        Assert.assertEquals("1 sheep...2 sheep...3 sheep...", CountingSheep.countingSheep(3));
     }
 
 }

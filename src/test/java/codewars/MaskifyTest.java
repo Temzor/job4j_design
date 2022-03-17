@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Maskify;
+import ru.codewars.eightkyu.Maskify;
 import org.junit.Assert;
 import org.junit.Test;
 

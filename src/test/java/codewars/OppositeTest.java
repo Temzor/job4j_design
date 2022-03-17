@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.Opposite;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Opposite;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class OppositeTest {
     @Test
     public void tests() {
-        assertEquals(-1, Opposite.opposite(1));
+        Assert.assertEquals(-1, Opposite.opposite(1));
     }
 }
 

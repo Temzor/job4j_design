@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.TenMinWalk;
+import ru.codewars.eightkyu.TenMinWalk;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

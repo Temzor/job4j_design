@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.IsAnagram;
+import ru.codewars.eightkyu.IsAnagram;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

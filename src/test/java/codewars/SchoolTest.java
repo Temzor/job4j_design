@@ -1,16 +1,15 @@
 package codewars;
 
-import codewars.School;
+import org.junit.Assert;
+import ru.codewars.eightkyu.School;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SchoolTest {
     @Test
     public void simpleTest() {
-        assertEquals(2, School.getAverage(new int[]{2, 2, 2, 2}));
-        assertEquals(3, School.getAverage(new int[]{1, 2, 3, 4, 5}));
-        assertEquals(1, School.getAverage(new int[]{1, 1, 1, 1, 1, 1, 1, 2}));
+        Assert.assertEquals(2, School.getAverage(new int[]{2, 2, 2, 2}));
+        Assert.assertEquals(3, School.getAverage(new int[]{1, 2, 3, 4, 5}));
+        Assert.assertEquals(1, School.getAverage(new int[]{1, 1, 1, 1, 1, 1, 1, 2}));
 
     }
 }

@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.Calculate;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Calculate;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CalculateTest {
     @Test
     public void testBMI() {
-        assertEquals("Normal", Calculate.bmi(80, 1.80));
+        Assert.assertEquals("Normal", Calculate.bmi(80, 1.80));
     }
 
 }

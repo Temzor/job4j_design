@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.DoubleInteger;
+import ru.codewars.eightkyu.DoubleInteger;
 import org.junit.Assert;
 import org.junit.Test;
 

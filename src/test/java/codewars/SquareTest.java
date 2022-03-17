@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.Square;
+import ru.codewars.eightkyu.Square;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

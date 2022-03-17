@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.Evaporator;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Evaporator;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class EvaporatorTest {
     @Test
     public void testEvaporatorOne() {
-        assertEquals(22, Evaporator.evaporator(10, 10, 10));
+        Assert.assertEquals(22, Evaporator.evaporator(10, 10, 10));
     }
 
 }

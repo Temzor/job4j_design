@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.InviteMoreWomen;
+import ru.codewars.eightkyu.InviteMoreWomen;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

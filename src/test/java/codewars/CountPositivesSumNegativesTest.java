@@ -1,35 +1,34 @@
 package codewars;
 
-import codewars.CountPositivesSumNegatives;
+import org.junit.Assert;
+import ru.codewars.eightkyu.CountPositivesSumNegatives;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CountPositivesSumNegativesTest {
     @Test
     public void countPositivesSumNegativesBasicTest() {
         int[] expectedResult = new int[] {10, -65};
-        assertArrayEquals(expectedResult, CountPositivesSumNegatives
+        Assert.assertArrayEquals(expectedResult, CountPositivesSumNegatives
                 .countPositivesSumNegatives(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15}));
     }
 
     @Test
     public void countPositivesSumNegativesInputWithZeroes() {
         int[] expectedResult = new int[] {8, -50};
-        assertArrayEquals(expectedResult, CountPositivesSumNegatives
+        Assert.assertArrayEquals(expectedResult, CountPositivesSumNegatives
                 .countPositivesSumNegatives(new int[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14}));
     }
 
     @Test
     public void countPositivesSumNegativesInputNull() {
         int[] expectedResult = new int[] {};
-        assertArrayEquals(expectedResult, CountPositivesSumNegatives.countPositivesSumNegatives(null));
+        Assert.assertArrayEquals(expectedResult, CountPositivesSumNegatives.countPositivesSumNegatives(null));
     }
 
     @Test
     public void countPositivesSumNegativesInputEmpty() {
         int[] expectedResult = new int[] {};
-        assertArrayEquals(expectedResult, CountPositivesSumNegatives.countPositivesSumNegatives(new int[] {}));
+        Assert.assertArrayEquals(expectedResult, CountPositivesSumNegatives.countPositivesSumNegatives(new int[] {}));
     }
 
     @Test
@@ -56,7 +55,7 @@ public class CountPositivesSumNegativesTest {
                 expected = new int[] {countPositives, sumNegatives };
             }
 
-            assertArrayEquals(expected, CountPositivesSumNegatives.countPositivesSumNegatives(input));
+            Assert.assertArrayEquals(expected, CountPositivesSumNegatives.countPositivesSumNegatives(input));
         }
     }
 }

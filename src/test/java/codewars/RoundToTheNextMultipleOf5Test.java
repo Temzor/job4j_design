@@ -1,11 +1,10 @@
 package codewars;
 
-import codewars.RoundToTheNextMultipleOf5;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RoundToTheNextMultipleOf5;
 import org.junit.Test;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 public class RoundToTheNextMultipleOf5Test {
     @Test
@@ -20,7 +19,7 @@ public class RoundToTheNextMultipleOf5Test {
         };
         Arrays.stream(arr)
                 .forEach(
-                        (testCase) -> assertEquals(
+                        (testCase) -> Assert.assertEquals(
                                 "Input: " + testCase[0],
                                 testCase[1],
                                 RoundToTheNextMultipleOf5.roundToNext5(testCase[0])));

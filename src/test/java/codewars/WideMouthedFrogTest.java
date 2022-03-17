@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.WideMouthedFrog;
+import org.junit.Assert;
+import ru.codewars.eightkyu.WideMouthedFrog;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class WideMouthedFrogTest {
     @Test
     public void fixedTests() {
-        assertEquals("wide", WideMouthedFrog.mouthSize("toucan"));
-        assertEquals("wide", WideMouthedFrog.mouthSize("ant bear"));
-        assertEquals("small", WideMouthedFrog.mouthSize("alligator"));
+        Assert.assertEquals("wide", WideMouthedFrog.mouthSize("toucan"));
+        Assert.assertEquals("wide", WideMouthedFrog.mouthSize("ant bear"));
+        Assert.assertEquals("small", WideMouthedFrog.mouthSize("alligator"));
     }
 }

@@ -1,6 +1,6 @@
 package codewars;
 
-import codewars.FlattenAndSort;
+import ru.codewars.eightkyu.FlattenAndSort;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,31 +1,30 @@
 package codewars;
 
-import codewars.RentalCarCost;
+import org.junit.Assert;
+import ru.codewars.eightkyu.RentalCarCost;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RentalCarCostTest {
     @Test
     public void under3Tests() {
-        assertEquals(40, RentalCarCost.rentalCarCost(1));
-        assertEquals(80, RentalCarCost.rentalCarCost(2));
+        Assert.assertEquals(40, RentalCarCost.rentalCarCost(1));
+        Assert.assertEquals(80, RentalCarCost.rentalCarCost(2));
     }
 
     @Test
     public void under7Tests() {
-        assertEquals(100, RentalCarCost.rentalCarCost(3));
-        assertEquals(140, RentalCarCost.rentalCarCost(4));
-        assertEquals(180, RentalCarCost.rentalCarCost(5));
-        assertEquals(220, RentalCarCost.rentalCarCost(6));
+        Assert.assertEquals(100, RentalCarCost.rentalCarCost(3));
+        Assert.assertEquals(140, RentalCarCost.rentalCarCost(4));
+        Assert.assertEquals(180, RentalCarCost.rentalCarCost(5));
+        Assert.assertEquals(220, RentalCarCost.rentalCarCost(6));
     }
 
     @Test
     public void over7Tests() {
-        assertEquals(230, RentalCarCost.rentalCarCost(7));
-        assertEquals(270, RentalCarCost.rentalCarCost(8));
-        assertEquals(310, RentalCarCost.rentalCarCost(9));
-        assertEquals(350, RentalCarCost.rentalCarCost(10));
+        Assert.assertEquals(230, RentalCarCost.rentalCarCost(7));
+        Assert.assertEquals(270, RentalCarCost.rentalCarCost(8));
+        Assert.assertEquals(310, RentalCarCost.rentalCarCost(9));
+        Assert.assertEquals(350, RentalCarCost.rentalCarCost(10));
     }
 
 }

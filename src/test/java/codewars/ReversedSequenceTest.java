@@ -1,14 +1,13 @@
 package codewars;
 
-import codewars.ReversedSequence;
+import org.junit.Assert;
+import ru.codewars.eightkyu.ReversedSequence;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ReversedSequenceTest {
     @Test
     public void simpleTest() {
-        assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ReversedSequence.reverse(5));
+        Assert.assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ReversedSequence.reverse(5));
     }
 
 }

@@ -1,8 +1,8 @@
 package codewars;
 
-import codewars.God;
-import codewars.Human;
-import codewars.Man;
+import ru.codewars.eightkyu.God;
+import ru.codewars.eightkyu.Human;
+import ru.codewars.eightkyu.Man;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

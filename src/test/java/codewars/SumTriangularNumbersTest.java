@@ -1,17 +1,17 @@
 package codewars;
 
+import org.junit.Assert;
+import ru.codewars.eightkyu.SumTriangularNumbers;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SumTriangularNumbersTest {
     @Test
     public void basicTests() {
-        assertEquals(56, SumTriangularNumbers.sumTriangularNumbers(6));
-        assertEquals(7140, SumTriangularNumbers.sumTriangularNumbers(34));
-        assertEquals(0, SumTriangularNumbers.sumTriangularNumbers(-291));
-        assertEquals(140205240, SumTriangularNumbers.sumTriangularNumbers(943));
-        assertEquals(0, SumTriangularNumbers.sumTriangularNumbers(-971));
+        Assert.assertEquals(56, SumTriangularNumbers.sumTriangularNumbers(6));
+        Assert.assertEquals(7140, SumTriangularNumbers.sumTriangularNumbers(34));
+        Assert.assertEquals(0, SumTriangularNumbers.sumTriangularNumbers(-291));
+        Assert.assertEquals(140205240, SumTriangularNumbers.sumTriangularNumbers(943));
+        Assert.assertEquals(0, SumTriangularNumbers.sumTriangularNumbers(-971));
     }
 
 }

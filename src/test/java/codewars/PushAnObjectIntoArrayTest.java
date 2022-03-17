@@ -1,6 +1,7 @@
 package codewars;
 
-import codewars.PushAnObjectIntoArray;
+import org.junit.Assert;
+import ru.codewars.eightkyu.PushAnObjectIntoArray;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class PushAnObjectIntoArrayTest {
     @Test
     public void testSomething() {
         ArrayList<String> items = PushAnObjectIntoArray.push();
-        assertEquals(1, items.size());
-        assertEquals("an object", items.get(0));
+        Assert.assertEquals(1, items.size());
+        Assert.assertEquals("an object", items.get(0));
     }
 }

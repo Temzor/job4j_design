@@ -1,5 +1,7 @@
 package codewars;
 
+import org.junit.Assert;
+import ru.codewars.eightkyu.Switch;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 public class SwitchTest {
     @Test
     public void testSomething() {
-        assertEquals("abc", Switch.switcheroo("bac"));
-        assertEquals("ccc", Switch.switcheroo("ccc"));
-        assertEquals("aaabcccbaaa", Switch.switcheroo("bbbacccabbb"));
+        Assert.assertEquals("abc", Switch.switcheroo("bac"));
+        Assert.assertEquals("ccc", Switch.switcheroo("ccc"));
+        Assert.assertEquals("aaabcccbaaa", Switch.switcheroo("bbbacccabbb"));
     }
 
 }

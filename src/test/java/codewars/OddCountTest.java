@@ -1,15 +1,14 @@
 package codewars;
 
-import codewars.OddCount;
+import org.junit.Assert;
+import ru.codewars.eightkyu.OddCount;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class OddCountTest {
     @Test
     public void fixedTests() {
-        assertEquals(7, OddCount.oddCount(15));
-        assertEquals(7511, OddCount.oddCount(15023));
+        Assert.assertEquals(7, OddCount.oddCount(15));
+        Assert.assertEquals(7511, OddCount.oddCount(15023));
     }
 
 }

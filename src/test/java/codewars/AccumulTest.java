@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.Accumul;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Accumul;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class AccumulTest {
     private static void testing(String actual, String expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test() {

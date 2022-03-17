@@ -1,13 +1,14 @@
 package codewars;
 
-import codewars.Movie;
+import org.junit.Assert;
+import ru.codewars.eightkyu.Movie;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MovieTest {
     private static void testing(long actual, long expected) {
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void test1() {

@@ -1,24 +1,23 @@
 package codewars;
 
-import codewars.CountingDuplicates;
+import org.junit.Assert;
+import ru.codewars.eightkyu.CountingDuplicates;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CountingDuplicatesTest {
     @Test
     public void abcdeReturnsZero() {
-        assertEquals(0, CountingDuplicates.duplicateCount("abcde"));
+        Assert.assertEquals(0, CountingDuplicates.duplicateCount("abcde"));
     }
 
     @Test
     public void abcdeaReturnsOne() {
-        assertEquals(1, CountingDuplicates.duplicateCount("abcdea"));
+        Assert.assertEquals(1, CountingDuplicates.duplicateCount("abcdea"));
     }
 
     @Test
     public void indivisibilityReturnsOne() {
-        assertEquals(1, CountingDuplicates.duplicateCount("indivisibility"));
+        Assert.assertEquals(1, CountingDuplicates.duplicateCount("indivisibility"));
     }
 
     @Test
@@ -32,7 +31,7 @@ public class CountingDuplicatesTest {
                 + testHundredB + testThousandA;
 
 
-        assertEquals(3, CountingDuplicates.duplicateCount(test));
+        Assert.assertEquals(3, CountingDuplicates.duplicateCount(test));
     }
 
 }
