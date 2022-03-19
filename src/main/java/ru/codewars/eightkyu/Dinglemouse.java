@@ -1,6 +1,9 @@
 package ru.codewars.eightkyu;
 
 public class Dinglemouse {
+    public Dinglemouse(String clint, String eastwood) {
+    }
+
     public static int[] humanYearsCatYearsDogYears(final int humanYears) {
         int cat = 15;
         int dog = 15;
