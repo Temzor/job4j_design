@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 public class ReportEngineForAccounting implements Report {
 
     private final Store store;
-    private int nds = 120 * 20;
+    private final int nds = 120 * 20;
 
     public ReportEngineForAccounting(Store store) {
         this.store = store;
