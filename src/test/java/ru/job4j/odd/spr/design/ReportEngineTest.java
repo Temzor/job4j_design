@@ -109,9 +109,6 @@ public class ReportEngineTest {
         StringBuilder expect = new StringBuilder()
                 .append("Name; Salary")
                 .append(line)
-                .append(worker1.getName()).append(";")
-                .append(worker1.getSalary()).append(";")
-                .append(line)
                 .append(worker2.getName()).append(";")
                 .append(worker2.getSalary()).append(";")
                 .append(line)
@@ -120,6 +117,9 @@ public class ReportEngineTest {
                 .append(line)
                 .append(worker4.getName()).append(";")
                 .append(worker4.getSalary()).append(";")
+                .append(line)
+                .append(worker1.getName()).append(";")
+                .append(worker1.getSalary()).append(";")
                 .append(line);
         MatcherAssert.assertThat(engine.generate(em -> true), is(expect.toString()));
     }
