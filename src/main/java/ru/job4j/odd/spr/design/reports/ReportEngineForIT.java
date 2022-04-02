@@ -1,4 +1,4 @@
-package ru.job4j.odd.spr.design.templates;
+package ru.job4j.odd.spr.design.reports;
 
 import ru.job4j.odd.spr.design.Report;
 import ru.job4j.odd.spr.design.model.Employee;

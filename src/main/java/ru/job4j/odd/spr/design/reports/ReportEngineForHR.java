@@ -1,10 +1,9 @@
-package ru.job4j.odd.spr.design.templates;
+package ru.job4j.odd.spr.design.reports;
 
 import ru.job4j.odd.spr.design.model.Employee;
 import ru.job4j.odd.spr.design.Report;
 import ru.job4j.odd.spr.design.store.Store;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 

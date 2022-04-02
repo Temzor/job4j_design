@@ -1,6 +1,7 @@
 package ru.job4j.odd.spr.design.model;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 
 public class Employee {
@@ -15,6 +16,7 @@ public class Employee {
         this.fired = fired;
         this.salary = salary;
     }
+
 
     public String getName() {
         return name;
