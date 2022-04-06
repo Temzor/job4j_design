@@ -1,9 +1,9 @@
 package ru.job4j.odd.lsp.parking.model;
 
 public interface Transport {
-    String getTypeTransport();
+
+    String getEGovNumberTransport();
 
     int getSizeTransport();
 
-    String getEGovNumberTransport();
 }

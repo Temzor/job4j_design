@@ -4,21 +4,14 @@ import ru.job4j.odd.lsp.parking.model.Transport;
 
 import java.util.List;
 
-interface Parking {
+public interface Parking {
 
-    boolean add(Transport vehicle);
+    boolean add(Transport transport);
 
-    Transport remove(Transport vehicle);
+    Transport remove(Transport transport);
 
     Transport getTransport(String getEGovNumberTransport);
 
     List<Transport> getTransportList();
 
-    int getMaxMotoSpaces();
-
-    int getMaxCarSpaces();
-
-    int getMaxTruckSpaces();
-
-    int getSize();
 }
