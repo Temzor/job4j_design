@@ -9,7 +9,6 @@ import ru.job4j.odd.lsp.foodstore.products.Bread;
 import ru.job4j.odd.lsp.foodstore.products.Milk;
 import ru.job4j.odd.lsp.foodstore.products.Spaghetti;
 import ru.job4j.odd.lsp.foodstore.store.Store;
-
 import java.time.LocalDate;
 import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,14 +18,14 @@ import static org.hamcrest.Matchers.is;
 public class ControlQualityTest {
     @Test
     public void whenBreadGoToWarehouse() {
-        Store warehouse = new Warehouse(f -> f.isFreshInPercent() > 75);
-        Store shop = new Shop(f -> f.isFreshInPercent() <= 75 && f.isFreshInPercent() > 0);
-        Store trash = new Trash(f -> f.isFreshInPercent() <= 0);
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food bread = new Bread("Bread",
-                LocalDate.of(2022, 4, 4),
-                LocalDate.of(2022, 4, 9),
-                68.8, 0);
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(10),
+                30.80, 0);
         List<Food> foods = List.of(bread);
         ControlQuality controlQuality = new ControlQuality();
         controlQuality.sort(stores, foods);
@@ -35,13 +34,13 @@ public class ControlQualityTest {
 
     @Test
     public void whenMilkGoToUtil() {
-        Store warehouse = new Warehouse(f -> f.isFreshInPercent() > 75);
-        Store shop = new Shop(f -> f.isFreshInPercent() <= 75 && f.isFreshInPercent() > 0);
-        Store trash = new Trash(f -> f.isFreshInPercent() <= 0);
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food milk = new Milk("Milk",
-                LocalDate.of(2022, 4, 1),
-                LocalDate.of(2022, 4, 5),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(0),
                 68.8, 0);
         List<Food> foods = List.of(milk);
         ControlQuality controlQuality = new ControlQuality();
@@ -51,13 +50,13 @@ public class ControlQualityTest {
 
     @Test
     public void whenMilkGoToShop() {
-        Store warehouse = new Warehouse(f -> f.isFreshInPercent() > 75);
-        Store shop = new Shop(f -> f.isFreshInPercent() <= 75 && f.isFreshInPercent() > 0);
-        Store trash = new Trash(f -> f.isFreshInPercent() <= 0);
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food milk = new Milk("Milk",
-                LocalDate.of(2022, 4, 1),
-                LocalDate.of(2022, 4, 16),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(2),
                 68.8, 0);
         List<Food> foods = List.of(milk);
         ControlQuality controlQuality = new ControlQuality();
@@ -67,13 +66,13 @@ public class ControlQualityTest {
 
     @Test
     public void whenExpiryDateLessThen25AndSetDiscount() {
-        Store warehouse = new Warehouse(f -> f.isFreshInPercent() > 75);
-        Store shop = new Shop(f -> f.isFreshInPercent() <= 75 && f.isFreshInPercent() > 0);
-        Store trash = new Trash(f -> f.isFreshInPercent() <= 0);
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food spaghetti = new Spaghetti("Spaghetti",
-                LocalDate.of(2022, 4, 1),
-                LocalDate.of(2022, 4, 15),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(2),
                 400, 50);
         List<Food> foods = List.of(spaghetti);
         ControlQuality controlQuality = new ControlQuality();
@@ -84,21 +83,21 @@ public class ControlQualityTest {
 
     @Test
     public void whenMultiProductsToSort() {
-        Store warehouse = new Warehouse(f -> f.isFreshInPercent() > 75);
-        Store shop = new Shop(f -> f.isFreshInPercent() <= 75 && f.isFreshInPercent() > 0);
-        Store trash = new Trash(f -> f.isFreshInPercent() <= 0);
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food milk = new Milk("Milk",
-                LocalDate.of(2022, 4, 1),
-                LocalDate.of(2022, 4, 5),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(0),
                 68.8, 0);
         Food spaghetti = new Spaghetti("Spaghetti",
-                LocalDate.of(2022, 4, 1),
-                LocalDate.of(2022, 4, 15),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(2),
                 400, 0);
         Food bread = new Bread("Bread",
-                LocalDate.of(2022, 4, 4),
-                LocalDate.of(2022, 4, 9),
+                LocalDate.now().minusDays(3),
+                LocalDate.now().plusDays(10),
                 30.80, 0);
         List<Food> foods = List.of(milk, spaghetti, bread);
         ControlQuality controlQuality = new ControlQuality();

@@ -8,17 +8,20 @@ import java.util.function.Predicate;
 
 public class Trash implements Store {
 
-    Predicate<Food> filter;
+    private final Predicate<Food> filter = f -> getFreshPercent(f) <= 0;
 
-    List<Food> foods = new ArrayList<>();
-
-    public Trash(Predicate<Food> filter) {
-        this.filter = filter;
-    }
+    private List<Food> foods = new ArrayList<>();
 
     @Override
-    public void add(Food food) {
-        foods.add(food);
+    public boolean add(Food food) {
+        if (food == null) {
+            throw new IllegalArgumentException("Object is NULL");
+        }
+        boolean result = filter.test(food);
+        if (result) {
+            foods.add(food);
+        }
+        return result;
     }
 
     @Override
@@ -28,6 +31,6 @@ public class Trash implements Store {
 
     @Override
     public List<Food> getAll() {
-        return foods;
+        return List.copyOf(foods);
     }
 }

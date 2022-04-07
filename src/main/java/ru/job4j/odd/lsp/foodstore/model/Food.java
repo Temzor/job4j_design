@@ -6,8 +6,8 @@ public class Food {
     private String name;
     private LocalDate createDate;
     private LocalDate expiryDate;
-    double price;
-    int discount;
+    private double price;
+    private int discount;
 
     public Food(String name, LocalDate expiryDate, LocalDate createDate,  double price, int discount) {
         this.name = name;
@@ -39,15 +39,5 @@ public class Food {
 
     public void setDiscount(int discount) {
         this.discount = discount;
-    }
-
-    public long isFreshInPercent() {
-        long shelfLife = createDate.until(expiryDate, ChronoUnit.DAYS);
-        long daysUntilExpiry = LocalDate.now().until(expiryDate, ChronoUnit.DAYS);
-        double percent = (double) daysUntilExpiry / shelfLife * 100;
-        System.out.println(shelfLife);
-        System.out.println(daysUntilExpiry);
-        System.out.println(percent);
-        return (long) percent;
     }
 }

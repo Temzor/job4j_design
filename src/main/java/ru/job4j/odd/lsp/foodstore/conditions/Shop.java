@@ -8,21 +8,23 @@ import java.util.function.Predicate;
 
 public class Shop implements Store {
 
-    Predicate<Food> filter;
-
-    List<Food> foods = new ArrayList<>();
-
-    public Shop(Predicate<Food> filter) {
-        this.filter = filter;
-    }
-
+    private Predicate<Food> filter = f -> getFreshPercent(f) <= 75 && getFreshPercent(f) > 0;
+    
+    private List<Food> foods = new ArrayList<>();
+    
     @Override
-    public void add(Food food) {
-        if (food.isFreshInPercent() < 25) {
-            food.setDiscount(25);
+    public boolean add(Food food) {
+        if (food == null) {
+            throw new IllegalArgumentException("Object is NULL");
         }
-        foods.add(food);
-
+        boolean result = filter.test(food);
+        if (result) {
+            if (getFreshPercent(food) < 25) {
+                food.setDiscount(75);
+            }
+            foods.add(food);
+        }
+        return result;
     }
 
     @Override
@@ -32,6 +34,6 @@ public class Shop implements Store {
 
     @Override
     public List<Food> getAll() {
-        return foods;
+        return List.copyOf(foods);
     }
 }

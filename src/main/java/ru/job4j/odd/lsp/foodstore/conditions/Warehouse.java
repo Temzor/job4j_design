@@ -7,17 +7,20 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Warehouse implements Store {
-    Predicate<Food> filter;
+    private Predicate<Food> filter = f -> getFreshPercent(f) > 75;
 
-    List<Food> foods = new ArrayList<>();
-
-    public Warehouse(Predicate<Food> filter) {
-        this.filter = filter;
-    }
+    private List<Food> foods = new ArrayList<>();
 
     @Override
-    public void add(Food food) {
-        foods.add(food);
+    public boolean add(Food food) {
+        if (food == null) {
+            throw new IllegalArgumentException("Object is NULL");
+        }
+        boolean rsl = filter.test(food);
+        if (rsl) {
+            foods.add(food);
+        }
+        return rsl;
     }
 
     @Override
@@ -25,9 +28,8 @@ public class Warehouse implements Store {
         return filter;
     }
 
-    @Override
     public List<Food> getAll() {
-        return foods;
+        return List.copyOf(foods);
     }
 }
 
