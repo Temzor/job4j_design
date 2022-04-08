@@ -31,9 +31,11 @@ public class GoToParkingTest {
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
-    public void whenTruckSpaceGreaterThenCapacity() {
-        Parking parking = new GoToParking(4, 5);
+    @Test
+    public void whenGoParkingTruckOnPlaceForCar() {
+        Parking parking = new GoToParking(2, 0);
+        Transport truck = new Truck("Б963ЛО178", 2);
+        assertFalse(parking.park(truck));
     }
 
     @Ignore
