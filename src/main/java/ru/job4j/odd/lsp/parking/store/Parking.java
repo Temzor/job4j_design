@@ -6,12 +6,6 @@ import java.util.List;
 
 public interface Parking {
 
-    boolean add(Transport transport);
-
-    Transport remove(Transport transport);
-
-    Transport getTransport(String getEGovNumberTransport);
-
-    List<Transport> getTransportList();
+    boolean park(Transport transport);
 
 }
