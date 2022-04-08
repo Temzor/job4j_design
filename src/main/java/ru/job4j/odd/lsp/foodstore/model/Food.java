@@ -3,9 +3,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Food {
-    private String name;
-    private LocalDate createDate;
-    private LocalDate expiryDate;
+    private final String name;
+    private final LocalDate createDate;
+    private final LocalDate expiryDate;
     private double price;
     private int discount;
 
@@ -35,6 +35,10 @@ public class Food {
 
     public int getDiscount() {
         return discount;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void setDiscount(int discount) {

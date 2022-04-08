@@ -71,14 +71,52 @@ public class ControlQualityTest {
         Store trash = new Trash();
         List<Store> stores = List.of(warehouse, shop, trash);
         Food spaghetti = new Spaghetti("Spaghetti",
-                LocalDate.now().minusDays(3),
-                LocalDate.now().plusDays(2),
+                LocalDate.now().minusDays(30),
+                LocalDate.now().plusDays(5),
+                400, 25);
+        List<Food> foods = List.of(spaghetti);
+        ControlQuality controlQuality = new ControlQuality();
+        controlQuality.sort(stores, foods);
+        assertThat(shop.getAll(), is(foods));
+        assertThat(shop.getAll().get(0).getPrice(), is(300.0));
+        assertThat(spaghetti.getDiscount(), is(25));
+    }
+
+
+    @Test
+    public void whenExpiryDateLessThen50AndSetDiscount() {
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
+        List<Store> stores = List.of(warehouse, shop, trash);
+        Food spaghetti = new Spaghetti("Spaghetti",
+                LocalDate.now().minusDays(30),
+                LocalDate.now().plusDays(5),
                 400, 50);
         List<Food> foods = List.of(spaghetti);
         ControlQuality controlQuality = new ControlQuality();
         controlQuality.sort(stores, foods);
         assertThat(shop.getAll(), is(foods));
+        assertThat(shop.getAll().get(0).getPrice(), is(200.0));
         assertThat(spaghetti.getDiscount(), is(50));
+    }
+
+    @Test
+    public void whenExpiryDateLessThen75AndSetDiscount() {
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        Store trash = new Trash();
+        List<Store> stores = List.of(warehouse, shop, trash);
+        Food spaghetti = new Spaghetti("Spaghetti",
+                LocalDate.now().minusDays(30),
+                LocalDate.now().plusDays(5),
+                400, 75);
+        List<Food> foods = List.of(spaghetti);
+        ControlQuality controlQuality = new ControlQuality();
+        controlQuality.sort(stores, foods);
+        assertThat(shop.getAll(), is(foods));
+        assertThat(shop.getAll().get(0).getPrice(), is(100.0));
+        assertThat(spaghetti.getDiscount(), is(75));
     }
 
     @Test

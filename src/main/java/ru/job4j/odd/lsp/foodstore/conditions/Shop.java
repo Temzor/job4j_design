@@ -8,9 +8,9 @@ import java.util.function.Predicate;
 
 public class Shop implements Store {
 
-    private Predicate<Food> filter = f -> getFreshPercent(f) <= 75 && getFreshPercent(f) > 0;
+    private final Predicate<Food> filter = f -> getFreshPercent(f) <= 75 && getFreshPercent(f) > 0;
     
-    private List<Food> foods = new ArrayList<>();
+    private final List<Food> foods = new ArrayList<>();
     
     @Override
     public boolean add(Food food) {
@@ -20,7 +20,7 @@ public class Shop implements Store {
         boolean result = filter.test(food);
         if (result) {
             if (getFreshPercent(food) < 25) {
-                food.setDiscount(75);
+                food.setPrice(food.getPrice() - (food.getPrice() * food.getDiscount() / 100));
             }
             foods.add(food);
         }
