@@ -3,9 +3,10 @@ package ru.job4j.odd.spr.design.reports;
 import static org.hamcrest.Matchers.is;
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
-import ru.job4j.odd.spr.design.Report;
-import ru.job4j.odd.spr.design.model.Employee;
-import ru.job4j.odd.spr.design.store.MemStore;
+import ru.job4j.solid.spr.design.Report;
+import ru.job4j.solid.spr.design.model.Employee;
+import ru.job4j.solid.spr.design.reports.*;
+import ru.job4j.solid.spr.design.store.MemStore;
 import java.time.OffsetDateTime;
 import java.util.Calendar;
 

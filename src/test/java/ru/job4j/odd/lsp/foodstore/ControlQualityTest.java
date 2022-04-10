@@ -1,14 +1,15 @@
 package ru.job4j.odd.lsp.foodstore;
 
 import org.junit.Test;
-import ru.job4j.odd.lsp.foodstore.conditions.Shop;
-import ru.job4j.odd.lsp.foodstore.conditions.Trash;
-import ru.job4j.odd.lsp.foodstore.conditions.Warehouse;
-import ru.job4j.odd.lsp.foodstore.model.Food;
-import ru.job4j.odd.lsp.foodstore.products.Bread;
-import ru.job4j.odd.lsp.foodstore.products.Milk;
-import ru.job4j.odd.lsp.foodstore.products.Spaghetti;
-import ru.job4j.odd.lsp.foodstore.store.Store;
+import ru.job4j.solid.lsp.foodstore.ControlQuality;
+import ru.job4j.solid.lsp.foodstore.conditions.Shop;
+import ru.job4j.solid.lsp.foodstore.conditions.Trash;
+import ru.job4j.solid.lsp.foodstore.conditions.Warehouse;
+import ru.job4j.solid.lsp.foodstore.model.Food;
+import ru.job4j.solid.lsp.foodstore.products.Bread;
+import ru.job4j.solid.lsp.foodstore.products.Milk;
+import ru.job4j.solid.lsp.foodstore.products.Spaghetti;
+import ru.job4j.solid.lsp.foodstore.store.Store;
 import java.time.LocalDate;
 import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
