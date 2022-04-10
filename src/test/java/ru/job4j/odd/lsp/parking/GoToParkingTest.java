@@ -2,10 +2,12 @@ package ru.job4j.odd.lsp.parking;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import ru.job4j.odd.lsp.parking.model.Car;
-import ru.job4j.odd.lsp.parking.model.Transport;
-import ru.job4j.odd.lsp.parking.model.Truck;
-import ru.job4j.odd.lsp.parking.store.Parking;
+
+import ru.job4j.solid.lsp.parking.GoToParking;
+import ru.job4j.solid.lsp.parking.model.Car;
+import ru.job4j.solid.lsp.parking.model.Transport;
+import ru.job4j.solid.lsp.parking.model.Truck;
+import ru.job4j.solid.lsp.parking.store.Parking;
 
 public class GoToParkingTest {
 
