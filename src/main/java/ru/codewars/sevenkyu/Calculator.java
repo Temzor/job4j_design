@@ -3,12 +3,12 @@ package ru.codewars.sevenkyu;
 import java.lang.constant.Constable;
 
 public class Calculator {
-    public static Constable calculate(final double numberOne, final String operation, final double numberTwo) {
-        return switch (operation) {
-            case ("+") -> numberOne + numberTwo;
-            case ("-") -> numberOne - numberTwo;
-            case ("*") -> numberOne <= 0 || numberTwo <= 0 ? Math.abs(numberOne * numberTwo) : numberOne * numberTwo;
-            case ("/") -> numberOne == 0 || numberTwo == 0 ? null : numberOne / numberTwo;
+    public static Double calculate(final double x, final String op, final double y) {
+        return switch (op) {
+            case "+" -> x + y;
+            case "-" -> x - y;
+            case "*" -> x * y + 0.0;
+            case "/" -> y == 0 ? null : x / y;
             default -> null;
         };
     }
