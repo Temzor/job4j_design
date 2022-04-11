@@ -1,4 +1,4 @@
-package ru.job4j.solid.isp;
+package ru.job4j.solid.isp.example;
 
 /**
  * Интерфейс WealthViolationISPThree описывает поведение трейдеров в компании;
