@@ -1,12 +1,16 @@
 package ru.codewars.sevenkyu;
 
+import java.util.stream.IntStream;
+
 public class DisariumNumber {
     public static String disariumNumber(int number) {
-        int result = 0;
-        String[] array = String.valueOf(number).split("");
-        for (int i = 0; i < array.length; i++) {
-            result += Math.pow(Integer.parseInt(array[i]), i + 1);
-        }
-        return number == result ? "Disarium !!" : "Not !!";
+        int[] numbers = Integer.toString(number)
+                .chars()
+                .map(Character::getNumericValue)
+                .toArray();
+
+        return IntStream.range(0, numbers.length)
+                .map(index -> (int) Math.pow(numbers[index], index + 1))
+                .sum() == number ? "Disarium !!" : "Not !!";
     }
 }
