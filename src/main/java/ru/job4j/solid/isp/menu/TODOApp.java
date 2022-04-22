@@ -10,6 +10,11 @@ import java.util.Scanner;
 public class TODOApp {
     public static final ActionDelegate STUB_ACTION = System.out::println;
 
+    private final int zero = 0;
+    private final int one = 1;
+    private final int two = 2;
+    private final int three = 3;
+
     public void init(Scanner scanner) {
         Menu menu = new SimpleMenu();
         boolean run = true;
@@ -17,21 +22,21 @@ public class TODOApp {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select == 0) {
+            if (select == zero) {
                 System.out.println("Enter name parent");
                 String parent = scanner.next();
                 System.out.println("Enter child name");
                 String child = scanner.next();
                 menu.add(parent, child, STUB_ACTION);
-            } else if (select == 1) {
+            } else if (select == one) {
                 System.out.println("Enter child name");
                 String child = scanner.next();
                 System.out.println(menu.select(child));
-            } else if (select == 2) {
+            } else if (select == two) {
                 System.out.println("Output All");
                 PrintAll printer = new PrintAll();
                 printer.print(menu);
-            } else if (select == 3) {
+            } else if (select == three) {
                 run = false;
             }
         }

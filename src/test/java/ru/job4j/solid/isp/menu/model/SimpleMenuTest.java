@@ -1,10 +1,8 @@
-package ru.job4j.solid.isp.menu;
+package ru.job4j.solid.isp.menu.model;
 
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 import ru.job4j.solid.isp.menu.action.ActionDelegate;
-import ru.job4j.solid.isp.menu.model.Menu;
-import ru.job4j.solid.isp.menu.model.SimpleMenu;
 import ru.job4j.solid.isp.menu.out.MenuPrinter;
 import ru.job4j.solid.isp.menu.out.PrintAll;
 
