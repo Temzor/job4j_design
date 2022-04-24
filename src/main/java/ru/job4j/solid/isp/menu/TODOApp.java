@@ -10,10 +10,10 @@ import java.util.Scanner;
 public class TODOApp {
     public static final ActionDelegate STUB_ACTION = System.out::println;
 
-    private static final int ADDACTIONFORVALUEZERO = 0;
-    private static final int ADDACTIONFORVALUEONE = 1;
-    private static final int ADDACTIONFORVALUETWO = 2;
-    private static final int ADDACTIONFORVALUETHREE = 3;
+    private static final int ADD_ACTION = 0;
+    private static final int SELECT_ACTION = 1;
+    private static final int PRINT_ACTION = 2;
+    private static final int EXIT_ACTION = 3;
 
 
     public void init(Scanner scanner) {
@@ -23,21 +23,21 @@ public class TODOApp {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select == ADDACTIONFORVALUEZERO) {
+            if (select == ADD_ACTION) {
                 System.out.println("Enter name parent");
                 String parent = scanner.next();
                 System.out.println("Enter child name");
                 String child = scanner.next();
                 menu.add(parent, child, STUB_ACTION);
-            } else if (select == ADDACTIONFORVALUEONE) {
+            } else if (select == SELECT_ACTION) {
                 System.out.println("Enter child name");
                 String child = scanner.next();
                 System.out.println(menu.select(child));
-            } else if (select == ADDACTIONFORVALUETWO) {
+            } else if (select == PRINT_ACTION) {
                 System.out.println("Output All");
                 PrintAll printer = new PrintAll();
                 printer.print(menu);
-            } else if (select == ADDACTIONFORVALUETHREE) {
+            } else if (select == EXIT_ACTION) {
                 run = false;
             }
         }
