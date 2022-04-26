@@ -15,7 +15,6 @@ public class TODOApp {
     private static final int PRINT_ACTION = 2;
     private static final int EXIT_ACTION = 3;
 
-
     public void init(Scanner scanner) {
         Menu menu = new SimpleMenu();
         boolean run = true;
