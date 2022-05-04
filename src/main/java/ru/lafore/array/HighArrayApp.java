@@ -30,5 +30,9 @@ public class HighArrayApp {
         array.delete(99);
 
         array.display();
+        array.getMax();
+
+        array.removeMax();
+        array.display();
     }
 }

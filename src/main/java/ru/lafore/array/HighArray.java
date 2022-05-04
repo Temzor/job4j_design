@@ -35,8 +35,8 @@ public class HighArray {
         if (j == nElems) {
             return false;
         } else {
-            for (int k = j; k < nElems; k++) {
-                arr[k] = arr[k + 1];
+            if (nElems - j >= 0) {
+                System.arraycopy(arr, j + 1, arr, j, nElems - j);
             }
             nElems--;
             return true;
@@ -48,5 +48,20 @@ public class HighArray {
             System.out.print(arr[j] + " ");
         }
         System.out.println();
+    }
+
+    public long getMax() {
+        long max = -1;
+        for (int j = 0; j < nElems; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+            }
+        }
+        System.out.println(max);
+        return max;
+    }
+
+    public void removeMax() {
+        delete(getMax());
     }
 }
