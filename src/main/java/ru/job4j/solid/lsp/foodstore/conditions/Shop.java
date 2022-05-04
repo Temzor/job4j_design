@@ -4,6 +4,7 @@ import ru.job4j.solid.lsp.foodstore.model.Food;
 import ru.job4j.solid.lsp.foodstore.store.Store;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -36,5 +37,10 @@ public class Shop implements Store {
     @Override
     public List<Food> getAll() {
         return List.copyOf(foods);
+    }
+    @Override
+    public Collection<? extends Food> clear() {
+        this.foods.clear();
+        return null;
     }
 }

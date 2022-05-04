@@ -4,13 +4,14 @@ import ru.job4j.solid.lsp.foodstore.model.Food;
 import ru.job4j.solid.lsp.foodstore.store.Store;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class Warehouse implements Store {
-    private Predicate<Food> filter = f -> getFreshPercent(f) > 75;
+    private final Predicate<Food> filter = f -> getFreshPercent(f) > 75;
 
-    private List<Food> foods = new ArrayList<>();
+    private final List<Food> foods = new ArrayList<>();
 
     @Override
     public boolean add(Food food) {
@@ -31,6 +32,12 @@ public class Warehouse implements Store {
 
     public List<Food> getAll() {
         return List.copyOf(foods);
+    }
+
+    @Override
+    public Collection<? extends Food> clear() {
+        this.foods.clear();
+        return null;
     }
 }
 
