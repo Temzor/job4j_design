@@ -37,8 +37,7 @@ public class Trash implements Store {
     }
 
     @Override
-    public Collection<? extends Food> clear() {
-        this.foods.clear();
-        return null;
+    public void clear() {
+        foods.clear();
     }
 }

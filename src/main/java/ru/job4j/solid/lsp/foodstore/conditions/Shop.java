@@ -39,8 +39,7 @@ public class Shop implements Store {
         return List.copyOf(foods);
     }
     @Override
-    public Collection<? extends Food> clear() {
-        this.foods.clear();
-        return null;
+    public void clear() {
+        foods.clear();
     }
 }
