@@ -1,14 +1,13 @@
-package edu;
+package ru.job4j.it.edu;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class TreeMap {
+public class LinkedHashMap {
     public static void main(String[] args) {
-        Map<VehicleMake, List<String>> map = new java.util.TreeMap<>();
+        Map<VehicleMake, List<String>> map = new java.util.LinkedHashMap<>();
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         List<String> list3 = new ArrayList<>();

@@ -14,13 +14,11 @@ public class ControlQuality {
     }
 
     public void resort(List<Store> stores) {
-        List<Food> temp = new ArrayList<>();
+        List<Food> foods = new ArrayList<>();
         stores.forEach(s -> {
-            temp.addAll(s.getAll());
+            foods.addAll(s.getAll());
             s.getAll().clear();
         });
-        for (Store store : stores) {
-            temp.stream().filter(store.filter()).forEach(store::add);
-        }
+        sort(stores, foods);
     }
 }

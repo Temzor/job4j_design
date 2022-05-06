@@ -1,7 +1,7 @@
-package ru.lafore.array.person;
+package ru.lafore.chapter2.person;
 
 public class PersonDataArray {
-    private Person[] people;
+    private final Person[] people;
     private int nElements;
 
     public PersonDataArray(int max) {

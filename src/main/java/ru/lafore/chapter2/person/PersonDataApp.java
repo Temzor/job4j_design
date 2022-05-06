@@ -1,4 +1,4 @@
-package ru.lafore.array.person;
+package ru.lafore.chapter2.person;
 
 public class PersonDataApp {
     public static void main(String[] args) {

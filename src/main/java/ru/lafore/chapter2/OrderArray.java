@@ -1,4 +1,4 @@
-package ru.lafore.array;
+package ru.lafore.chapter2;
 
 public class OrderArray {
     private final long[] arr;

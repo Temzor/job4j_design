@@ -1,4 +1,4 @@
-package ru.lafore.array;
+package ru.lafore.chapter2;
 
 public class HighArrayApp {
     public static void main(String[] args) {

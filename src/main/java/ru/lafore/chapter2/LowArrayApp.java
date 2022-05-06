@@ -1,4 +1,4 @@
-package ru.lafore.array;
+package ru.lafore.chapter2;
 
 public class LowArrayApp {
     public static void main(String[] args) {

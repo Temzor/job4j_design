@@ -1,4 +1,4 @@
-package ru.lafore.array;
+package ru.lafore.chapter2;
 
 public class OrderArrayApp {
    public static void main(String[] args) {
