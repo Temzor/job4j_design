@@ -15,6 +15,7 @@ public interface Store {
     List<Food> getAll();
 
     void clear();
+
     default long getFreshPercent(Food food) {
         if (food == null) {
             throw new IllegalArgumentException("Object is NULL");
