@@ -2,23 +2,26 @@ package ru.lafore.chapter3.bublesort;
 
 public class ArrayBubApp {
     public static void main(String[] args) {
-        int maxSize = 100;
+        int maxSize = 100000;
         ArrayBub arrayBub;
         arrayBub = new ArrayBub(maxSize);
 
-        arrayBub.insert(77);
-        arrayBub.insert(99);
-        arrayBub.insert(44);
-        arrayBub.insert(55);
-        arrayBub.insert(22);
-        arrayBub.insert(88);
-        arrayBub.insert(11);
-        arrayBub.insert(0);
-        arrayBub.insert(66);
-        arrayBub.insert(33);
+        for (int i = 0; i < maxSize; i++) {
+            arrayBub.insert((long) (Math.random() * (maxSize - 1)));
+        }
 
-        arrayBub.display();
         arrayBub.bubbleSort();
-        arrayBub.display();
+
+        for (int i = 0; i < maxSize; i++) {
+            arrayBub.insert(100000 - i);
+        }
+
+        arrayBub.bubbleSort();
+
+        for (int i = 0; i < maxSize; i++) {
+            arrayBub.insert(i);
+        }
+
+        arrayBub.bubbleSort();
     }
 }
