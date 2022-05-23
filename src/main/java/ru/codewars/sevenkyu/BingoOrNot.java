@@ -1,21 +1,18 @@
 package ru.codewars.sevenkyu;
 
-import java.util.Arrays;
-
 public class BingoOrNot {
     public static String bingo(int[] bingoNumbers) {
-        int result = 0;
-        int[] sortAndDistinct = Arrays.stream(bingoNumbers)
-                .distinct()
-                .sorted()
-                .toArray();
+        int[] checker = {2, 9, 14, 7, 15};
+        int count = 0;
 
-        for (int j : sortAndDistinct) {
-            if (j == 2 || j == 7 || j == 9 || j == 14 || j == 15) {
-                result++;
+        for (int item : checker) {
+                for (int val : bingoNumbers) {
+                    if (item == val) {
+                        count++;
+                        break;
+                    }
             }
         }
-        return result == 5 ? "WIN" : "LOSE";
-
+        return (count == checker.length) ? "WIN" : "LOSE";
     }
 }
